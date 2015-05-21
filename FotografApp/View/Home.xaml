@@ -7,7 +7,46 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="MainNavigationGrid" HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="1371" Margin="0,387,0,0" Grid.ColumnSpan="2">
+            <Grid.Background>
+                <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/MainBag.png"/>
+            </Grid.Background>
+            <Rectangle x:Name="MainNameB" HorizontalAlignment="Left" Height="142" Stroke="Black" VerticalAlignment="Top" Width="474" Margin="-1,-1,0,-1">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="ms-appx:///Assets/LogoBag.png"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Button Content="Om" HorizontalAlignment="Left" Margin="612,-2,0,-4" VerticalAlignment="Top" Height="146" Width="150" BorderThickness="0,0,2,0"/>
+            <Button Content="Contact" HorizontalAlignment="Left" Margin="756,-2,0,-4" VerticalAlignment="Top" Height="146" Width="150" BorderThickness="0,0,2,0"/>
+            <Button Content="Gallery" HorizontalAlignment="Left" Margin="468,-2,0,-4" VerticalAlignment="Top" Height="146" Width="150" BorderThickness="0,0,1,0"/>
+            <Button x:Name="OrderButton" Content="Order" HorizontalAlignment="Left" Margin="900,-2,0,-4" VerticalAlignment="Top" Height="146" Width="150" Background="#FF52B248" BorderThickness="0,0,2,0"/>
+            <TextBlock x:Name="MainLoginInfo" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Login info*" VerticalAlignment="Top" Height="18" Width="163" Margin="1100,67,0,0" Foreground="White"/>
+            <TextBlock x:Name="MainName" HorizontalAlignment="Left" Margin="162,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="84" FontSize="36" FontWeight="Bold" TextAlignment="Center" Foreground="#FF979797">
+            	<Run Text="Rolf"/>
+            	<Run Text=" "/>
+            </TextBlock>
+            <TextBlock x:Name="MainName2" HorizontalAlignment="Left" Margin="246,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="169" FontSize="36" FontWeight="Bold" TextAlignment="Center" Foreground="#FF640000">
+            	<Run Text="Windfeld"/>
+            </TextBlock>
+        </Grid>
+        <Grid x:Name="LinksGrid" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="1371" Margin="0,731,0,0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.Background>
+                <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Bagkilde.png"/>
+            </Grid.Background>
+            <TextBlock HorizontalAlignment="Left" Margin="123,14,0,0" TextWrapping="Wrap" Text="Rolf Windfeld © 2015 | OPHAVSRET" VerticalAlignment="Top" Height="16" Width="337" FontSize="10" Foreground="#FF646464"/>
+            <Button Content="Facebook" HorizontalAlignment="Left" Margin="1178,-3,0,-3" VerticalAlignment="Top" Height="46" BorderThickness="1,0,0,0" FontSize="10" BorderBrush="#FF646464"/>
+            <Button Content="Google+" HorizontalAlignment="Left" Margin="1248,-3,0,-3" VerticalAlignment="Top" Height="46" BorderThickness="1,0,0,0" FontSize="10" BorderBrush="#FF646464"/>
+            <Button Content="twitter" HorizontalAlignment="Left" Margin="1313,-3,-3.286,-3" VerticalAlignment="Top" Height="46" BorderThickness="1,0" FontSize="10" BorderBrush="#FF646464"/>
+        </Grid>
 
     </Grid>
 </Page>
