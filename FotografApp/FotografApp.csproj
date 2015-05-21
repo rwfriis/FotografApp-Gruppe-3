@@ -118,6 +118,7 @@
     <Compile Include="Model\Gallery.cs" />
     <Compile Include="Model\Login.cs" />
     <Compile Include="Model\Orders.cs" />
+    <Compile Include="Model\Register.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
