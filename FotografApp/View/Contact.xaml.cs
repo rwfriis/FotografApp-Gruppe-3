@@ -22,7 +22,7 @@ namespace FotografApp.View
     /// A page that displays details for a single item within a group while allowing gestures to
     /// flip through other items belonging to the same group.
     /// </summary>
-    public sealed partial class Gallery : Page
+    public sealed partial class Contact : Page
     {
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
@@ -44,7 +44,7 @@ namespace FotografApp.View
             get { return this.navigationHelper; }
         }
 
-        public Gallery()
+        public Contact()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);

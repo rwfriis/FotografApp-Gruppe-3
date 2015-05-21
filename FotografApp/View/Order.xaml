@@ -9,6 +9,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Page.Resources>
+        <MenuFlyout x:Key="FlyoutBase1"/>
+    </Page.Resources>
 
     <!--
         This grid acts as a root panel for the page that defines two rows:
@@ -30,7 +33,60 @@
             TODO: Content should be placed within the following grid 
                   to show details for the current item
         -->
-        <Grid Grid.Row="1" x:Name="contentRegion"/>
+        <Grid Grid.Row="1" x:Name="contentRegion">
+            <FlyoutBase.AttachedFlyout>
+                <MenuFlyout/>
+            </FlyoutBase.AttachedFlyout>
+            <Rectangle Fill="Black" HorizontalAlignment="Left" Height="25" Margin="0,575,0,0" Stroke="Black" VerticalAlignment="Top" Width="1371" Opacity="0.5"/>
+            <Grid x:Name="MainNavigationGrid" HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="1371" Margin="0,446,0,0">
+                <Grid.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/MainBag.png"/>
+                </Grid.Background>
+                <Rectangle x:Name="MainNameB" HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="474" Margin="-1,0,0,0">
+                    <Rectangle.Fill>
+                        <ImageBrush ImageSource="ms-appx:///Assets/LogoBag.png"/>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Button x:Name="OmButton" Content="Om" HorizontalAlignment="Left" Margin="612,-2,0,-4" VerticalAlignment="Top" Height="146" Width="150" BorderThickness="0,0,2,0"/>
+                <Button x:Name="KontaktButton" Content="Kontakt" HorizontalAlignment="Left" Margin="756,-2,0,-4" VerticalAlignment="Top" Height="146" Width="150" BorderThickness="0,0,2,0"/>
+                <Button x:Name="GalleryButton" Content="Gallery" HorizontalAlignment="Left" Margin="468,-2,0,-4" VerticalAlignment="Top" Height="146" Width="150" BorderThickness="0,0,1,0"/>
+                <Button x:Name="BestilButton" Content="Bestil" HorizontalAlignment="Left" Margin="900,-2,0,-4" VerticalAlignment="Top" Height="146" Width="150" Background="#FF52B248" BorderThickness="0,0,2,0"/>
+                <TextBlock x:Name="MainLoginInfo" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Login info*" VerticalAlignment="Top" Height="18" Width="163" Margin="1100,67,0,0" Foreground="White"/>
+                <TextBlock x:Name="MainName" HorizontalAlignment="Left" Margin="162,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="84" FontSize="36" FontWeight="Bold" TextAlignment="Center" Foreground="#FF979797">
+            		<Run Text="Rolf"/>
+            		<Run Text=" "/>
+                </TextBlock>
+                <TextBlock x:Name="MainName2" HorizontalAlignment="Left" Margin="246,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="169" FontSize="36" FontWeight="Bold" TextAlignment="Center" Foreground="#FF640000">
+            		<Run Text="Windfeld"/>
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="LinksGrid" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="1371" Margin="0,591,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Bagkilde.png"/>
+                </Grid.Background>
+                <TextBlock HorizontalAlignment="Left" Margin="123,14,0,0" TextWrapping="Wrap" Text="Rolf Windfeld © 2015 | OPHAVSRET" VerticalAlignment="Top" Height="16" Width="337" FontSize="10" Foreground="#FF646464"/>
+                <Button x:Name="FacebookButton" Content="Facebook" HorizontalAlignment="Left" Margin="1178,-3,0,-3" VerticalAlignment="Top" Height="46" BorderThickness="1,0,0,0" FontSize="10" BorderBrush="#FF646464"/>
+                <Button x:Name="GoogleButton" Content="Google+" HorizontalAlignment="Left" Margin="1248,-3,0,-3" VerticalAlignment="Top" Height="46" BorderThickness="1,0,0,0" FontSize="10" BorderBrush="#FF646464"/>
+                <Button x:Name="TwitterButton" Content="twitter" HorizontalAlignment="Left" Margin="1313,-3,-3.286,-3" VerticalAlignment="Top" Height="46" BorderThickness="1,0" FontSize="10" BorderBrush="#FF646464"/>
+            </Grid>
+            <DatePicker HorizontalAlignment="Left" Margin="36,168,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="CheckPortræt" Content="Portræt" HorizontalAlignment="Left" Margin="137,229,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="NavnSource" HorizontalAlignment="Left" Margin="1119,113,0,0" TextWrapping="Wrap" Text="auto" VerticalAlignment="Top"/>
+            <TextBox x:Name="TelefonSource" HorizontalAlignment="Left" Margin="1119,168,0,0" TextWrapping="Wrap" Text="auto" VerticalAlignment="Top"/>
+            <TextBox x:Name="EmailSource" HorizontalAlignment="Left" Margin="1119,224,0,0" TextWrapping="Wrap" Text="auto" VerticalAlignment="Top"/>
+            <TextBlock x:Name="Navn" HorizontalAlignment="Left" Margin="971,132,0,0" TextWrapping="Wrap" Text="Navn:" VerticalAlignment="Top"/>
+            <TextBox x:Name="AdresseSource" HorizontalAlignment="Left" Margin="1119,280,0,0" TextWrapping="Wrap" Text="auto" VerticalAlignment="Top"/>
+            <TextBlock x:Name="Telefon" HorizontalAlignment="Left" Margin="971,187,0,0" TextWrapping="Wrap" Text="Telefon" VerticalAlignment="Top"/>
+            <TextBlock x:Name="Email" HorizontalAlignment="Left" Margin="971,243,0,0" TextWrapping="Wrap" Text="E-mail:" VerticalAlignment="Top"/>
+            <TextBlock x:Name="Adresse" HorizontalAlignment="Left" Margin="971,299,0,0" TextWrapping="Wrap" Text="Adresse:" VerticalAlignment="Top"/>
+            <TextBlock x:Name="Price" HorizontalAlignment="Left" Margin="36,302,0,0" TextWrapping="Wrap" Text="Pris i kr:" VerticalAlignment="Top"/>
+            <TextBlock x:Name="PriceSource" HorizontalAlignment="Left" Margin="140,305,0,0" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top"/>
+            <Button x:Name="Kategori" Content="Kategori" HorizontalAlignment="Left" Margin="137,117,0,0" VerticalAlignment="Top" Flyout="{StaticResource FlyoutBase1}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="36,132,0,0" TextWrapping="Wrap" Text="Type af billede:" VerticalAlignment="Top"/>
+        </Grid>
 
         <!-- Back button and page title -->
         <Grid>
