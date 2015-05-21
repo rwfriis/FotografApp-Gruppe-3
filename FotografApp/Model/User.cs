@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace FotografApp.Model
 {
-    class Register
+    class User
     {
         private string name;
-        private string password;
-        private string confirmPassword;
         private string email;
         private string tlf;
+        private bool typeOfUser;
     }
 }
