@@ -97,5 +97,45 @@ namespace FotografApp.View
         }
 
         #endregion
+
+        private void OmAtOrder(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof (About));
+        }
+
+        private void KontaktAtOrder(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Contact));
+        }
+
+        private void PortrætAtOrder(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Gallery));
+        }
+
+        private void NaturAtOrder(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Gallery));
+        }
+
+        private void ArkitekturAOrder(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Gallery));
+        }
+
+        private void BryllupAtOrder(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Gallery));
+        }
+
+        private void KreativtAtOrder(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Gallery));
+        }
+
+        private void ArkitekturAtOrder(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

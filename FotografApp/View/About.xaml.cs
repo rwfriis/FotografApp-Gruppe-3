@@ -98,19 +98,44 @@ namespace FotografApp.View
 
         #endregion
 
-        private void GalleryAtAbout(object sender, RoutedEventArgs e)
+        private void OmAtAbout(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof (Gallery));
+            Frame.Navigate(typeof(About));
         }
 
-        private void AboutAtAbout(object sender, RoutedEventArgs e)
+        private void KontaktAtAbout(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof (About));
+            Frame.Navigate(typeof(Contact));
         }
 
-        private void ContactAtAbout(object sender, RoutedEventArgs e)
+        private void BestilAtAbout(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof (Contact));
+            Frame.Navigate(typeof(Order));
+        }
+
+        private void PortrætAtAbout(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Gallery));
+        }
+
+        private void NaturAtAbout(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Gallery));
+        }
+
+        private void ArkitekturAtAbout(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Gallery));
+        }
+
+        private void BryllupAtAbout(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Gallery));
+        }
+
+        private void KreativtAtAbout(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Gallery));
         }
     }
 }

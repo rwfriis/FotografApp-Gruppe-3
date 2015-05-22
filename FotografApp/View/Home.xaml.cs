@@ -37,7 +37,32 @@ namespace FotografApp.View
             Frame.Navigate(typeof (Contact));
         }
 
-        private void PortrætFlyOut_Click(object sender, RoutedEventArgs e)
+        private void BestilAtHome(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Order));
+        }
+
+        private void PortrætAtHome(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Gallery));
+        }
+
+        private void NaturAtHome(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Gallery));
+        }
+
+        private void ArkitekturAHome(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Gallery));
+        }
+
+        private void BryllupAtHome(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Gallery));
+        }
+
+        private void KreativtAtHome(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Gallery));
         }
