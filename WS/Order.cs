@@ -31,7 +31,7 @@ namespace WS
 
         public override string ToString()
         {
-            return string.Format("User: {0}, UserEmail: {5}, Address: {1}, DateTime: {4}, TypeOf: {2}, Portraits: {3}, Price: {6}", User, Address, TypeOf, Portraits, DateTime, UserEmail, Price);
+            return string.Format("UserEmail: {0}, Address: {1}, DateTime: {2}, TypeOf: {3}, Portraits: {4}, Price: {5}", UserEmail, Address, DateTime, TypeOf, Portraits, Price);
         }
     }
 }
