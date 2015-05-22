@@ -24,9 +24,9 @@
                     <ImageBrush ImageSource="ms-appx:///Assets/LogoBag.png"/>
                 </Rectangle.Fill>
             </Rectangle>
-            <Button x:Name="OmButton" Content="Om" HorizontalAlignment="Left" Margin="612,-2,0,-4" VerticalAlignment="Top" Height="146" Width="150" BorderThickness="0,0,2,0"/>
-            <Button x:Name="KontaktButton" Content="Kontakt" HorizontalAlignment="Left" Margin="756,-2,0,-4" VerticalAlignment="Top" Height="146" Width="150" BorderThickness="0,0,2,0"/>
-            <Button x:Name="GalleryButton" Content="Gallery" HorizontalAlignment="Left" Margin="468,-2,0,-4" VerticalAlignment="Top" Height="146" Width="150" BorderThickness="0,0,1,0"/>
+            <Button x:Name="OmButton" Content="Om" HorizontalAlignment="Left" Margin="612,-2,0,-4" VerticalAlignment="Top" Height="146" Width="150" BorderThickness="0,0,2,0" Click="OmAtHome"/>
+            <Button x:Name="KontaktButton" Content="Kontakt" HorizontalAlignment="Left" Margin="756,-2,0,-4" VerticalAlignment="Top" Height="146" Width="150" BorderThickness="0,0,2,0" Click="KontaktAtHome"/>
+            <Button x:Name="GalleryButton" Content="Gallery" HorizontalAlignment="Left" Margin="468,-2,0,-4" VerticalAlignment="Top" Height="146" Width="150" BorderThickness="0,0,1,0" Click="GalleryAtHome"/>
             <Button x:Name="BestilButton" Content="Bestil" HorizontalAlignment="Left" Margin="900,-2,0,-4" VerticalAlignment="Top" Height="146" Width="150" Background="#FF52B248" BorderThickness="0,0,2,0"/>
             <TextBlock x:Name="MainLoginInfo" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Login info*" VerticalAlignment="Top" Height="18" Width="163" Margin="1100,67,0,0" Foreground="White"/>
             <TextBlock x:Name="MainName" HorizontalAlignment="Left" Margin="162,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="84" FontSize="36" FontWeight="Bold" TextAlignment="Center" Foreground="#FF979797">

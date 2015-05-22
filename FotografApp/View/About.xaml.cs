@@ -97,5 +97,20 @@ namespace FotografApp.View
         }
 
         #endregion
+
+        private void GalleryAtAbout(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof (Gallery));
+        }
+
+        private void AboutAtAbout(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof (About));
+        }
+
+        private void ContactAtAbout(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof (Contact));
+        }
     }
 }
