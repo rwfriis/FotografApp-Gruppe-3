@@ -32,7 +32,7 @@
                   to show details for the current item
         -->
         <Grid Grid.Row="1" x:Name="contentRegion">
-            <Maps:Map HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Height="299" Width="389"/>
+            <Maps:Map HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Height="299" Width="389"/>
             <Rectangle Fill="Black" HorizontalAlignment="Left" Height="66" Margin="0,555,0,0" Stroke="Black" VerticalAlignment="Top" Width="1371" Opacity="0.5"/>
             <Grid x:Name="MainNavigationGrid" HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="1371" Margin="0,410,0,0">
                 <Grid.Background>
@@ -75,7 +75,7 @@
             <TextBlock x:Name="Email" HorizontalAlignment="Left" Margin="926,124,0,0" TextWrapping="Wrap" Text="E-mail:" VerticalAlignment="Top"/>
             <TextBlock x:Name="Phone" HorizontalAlignment="Left" Margin="926,193,0,0" TextWrapping="Wrap" Text="Telefon" VerticalAlignment="Top"/>
             <TextBox HorizontalAlignment="Left" Margin="1027,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="131" Width="313"/>
-            <TextBlock HorizontalAlignment="Left" Margin="10,51,0,0" TextWrapping="Wrap" Text="Lokation" VerticalAlignment="Top" Height="19" Width="48"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,342,0,0" TextWrapping="Wrap" Text="4390 Vipperød.&#10;Telefon: +45 91326131&#10;E-mail: rolf.windfeld@gmail.com" VerticalAlignment="Top" Height="63" Width="389"/>
             <Button x:Name="Send" Content="Send" HorizontalAlignment="Left" Margin="1274,375,0,0" VerticalAlignment="Top"/>
         </Grid>
 

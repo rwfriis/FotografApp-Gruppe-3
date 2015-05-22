@@ -27,11 +27,6 @@ namespace FotografApp.View
             this.InitializeComponent();
         }
 
-        private void GalleryAtHome(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof (Gallery));
-        }
-
         private void OmAtHome(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof (About));
@@ -40,6 +35,11 @@ namespace FotografApp.View
         private void KontaktAtHome(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof (Contact));
+        }
+
+        private void PortrætFlyOut_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Gallery));
         }
     }
 }
