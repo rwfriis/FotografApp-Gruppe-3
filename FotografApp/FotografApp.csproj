@@ -104,7 +104,6 @@
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <Folder Include="Handler\" />
-    <Folder Include="Persistency\" />
     <Folder Include="ViewModel\" />
     <Folder Include="View\" />
   </ItemGroup>
@@ -120,6 +119,7 @@
     <Compile Include="Model\Orders.cs" />
     <Compile Include="Model\Register.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Persistency\DatabasePersistencyHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
