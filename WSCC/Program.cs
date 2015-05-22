@@ -13,7 +13,6 @@ namespace WSCC
     {
         static void Main(string[] args)
         {
-            
             const string serverUrl = "http://localhost:55001";
             HttpClientHandler handler = new HttpClientHandler();
             handler.UseDefaultCredentials = true;
@@ -25,14 +24,15 @@ namespace WSCC
 
                 try
                 {
-                    var response = client.GetAsync("api/Users").Result;
+                    var response = client.GetAsync("api/orders").Result;
                     if (response.IsSuccessStatusCode)
                     {
-                        var orders = response.Content.ReadAsAsync<IEnumerable<User>>().Result;
+                        var orders = response.Content.ReadAsAsync<IEnumerable<Order>>().Result;
                         foreach (var order in orders)
                         {
                             Console.WriteLine(order);
                         }
+
                     }
                 }
                 catch (Exception)
