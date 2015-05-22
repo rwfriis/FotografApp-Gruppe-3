@@ -106,6 +106,9 @@
     <Folder Include="Handler\" />
     <Folder Include="Persistency\" />
     <Folder Include="ViewModel\" />
+    <Folder Include="Model\" />
+    <Folder Include="Persistency\" />
+    <Folder Include="View\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -115,6 +118,8 @@
     <Compile Include="Common\ObservableDictionary.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="Handler\OrderHandler.cs" />
+    <Compile Include="Handler\UserHandler.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -139,6 +144,7 @@
     <Compile Include="View\Order.xaml.cs">
       <DependentUpon>Order.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\MainViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
