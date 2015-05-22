@@ -26,5 +26,20 @@ namespace FotografApp.View
         {
             this.InitializeComponent();
         }
+
+        private void GalleryAtHome(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof (Gallery));
+        }
+
+        private void OmAtHome(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof (About));
+        }
+
+        private void KontaktAtHome(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof (Contact));
+        }
     }
 }
