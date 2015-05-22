@@ -37,6 +37,7 @@ namespace FotografApp.Persistency
             _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
+        #region GetData
         public List<User> GetUsers()
         {
             List<User> users = new List<User>();
@@ -56,6 +57,27 @@ namespace FotografApp.Persistency
             return users;
         }
 
+        public List<Orders> GetOrders()
+        {
+            List<Orders> orders = new List<Orders>();
+            try
+            {
+                var response = _client.GetAsync("Orders").Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    string json = response.Content.ReadAsStringAsync().Result;
+                    orders = JsonConvert.DeserializeObject<List<Orders>>(json);
+                }
+            }
+            catch (Exception ex)
+            {
+                Message = ex.Message;
+            }
+            return orders;
+        }
+        #endregion
+
+        #region AddData
         public void AddUser(User user)
         {
             try
@@ -72,11 +94,29 @@ namespace FotografApp.Persistency
             }
         }
 
+        public void AddOrder(Orders order)
+        {
+            try
+            {
+                string json = JsonConvert.SerializeObject(order);
+                HttpContent content = new StringContent(json);
+                content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/json");
+                var response = _client.PostAsync("Orders", content).Result;
+                Message = response.Content.ReadAsStringAsync().Result;
+            }
+            catch (Exception ex)
+            {
+                Message = ex.Message;
+            }
+        }
+        #endregion
+
+        #region RemoveData
         public void RemoveUser(User user)
         {
             try
             {
-                var respone = _client.DeleteAsync("User/" + user.Email).Result;
+                var respone = _client.DeleteAsync("Users/" + user.Email).Result;
                 Message = _message + " " + respone.IsSuccessStatusCode;
             }
             catch (Exception ex)
@@ -85,14 +125,11 @@ namespace FotografApp.Persistency
             }
         }
 
-        public void EditUser(User user)
+        public void RemoveOrder(Orders order)
         {
             try
             {
-                string json = JsonConvert.SerializeObject(user);
-                HttpContent content = new StringContent(json);
-                content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/json");
-                var response = _client.PutAsync("User/" + user.Email, content).Result;
+                var response = _client.DeleteAsync("Orders/" + order).Result;
                 Message = _message + " " + response.IsSuccessStatusCode;
             }
             catch (Exception ex)
@@ -100,6 +137,41 @@ namespace FotografApp.Persistency
                 Message = ex.Message;
             }
         }
+        #endregion
+
+        #region EditData
+        public void EditUser(User user)
+        {
+            try
+            {
+                string json = JsonConvert.SerializeObject(user);
+                HttpContent content = new StringContent(json);
+                content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/json");
+                var response = _client.PutAsync("Users/" + user.Email, content).Result;
+                Message = _message + " " + response.IsSuccessStatusCode;
+            }
+            catch (Exception ex)
+            {
+                Message = ex.Message;
+            }
+        }
+
+        public void EditOrder(Orders order)
+        {
+            try
+            {
+                string json = JsonConvert.SerializeObject(order);
+                HttpContent content = new StringContent(json);
+                content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/json");
+                var response = _client.PutAsync("Orders/" + order, content).Result;
+                Message = _message + " " + response.IsSuccessStatusCode;
+            }
+            catch (Exception ex)
+            {
+                Message = ex.Message;
+            }
+        }
+        #endregion
 
         public string Message
         {
