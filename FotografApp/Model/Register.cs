@@ -8,13 +8,8 @@ namespace FotografApp.Model
 {
     class Register
     {
-        //private string name;
-        //private string password;
-        //private string confirmPassword;
-        //private string email;
-        //private string tlf;
 
-        public void ValidateRegistration(string name, string password, string confirmPassword, string email, string tlf)
+        public static void ValidateRegistration(string name, string password, string confirmPassword, string email, string tlf)
         {
             if (!name.Contains(null) || !password.Contains(null) && !confirmPassword.Contains(null) || !email.Contains(null) || !tlf.Contains(null))
             {

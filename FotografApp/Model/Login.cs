@@ -9,7 +9,7 @@ namespace FotografApp.Model
 {
     class Login
     {
-        public void LoginAsUser(string email, string password)
+        public static void LoginAsUser(string email, string password)
         {
             if (email.Contains("If exist in server") &&
                 password.Contains("If corresponds with the pasword of the email"))
