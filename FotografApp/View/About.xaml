@@ -31,6 +31,11 @@
                   to show details for the current item
         -->
         <Grid Grid.Row="1" x:Name="contentRegion">
+            <Image HorizontalAlignment="Left" Height="631.429" VerticalAlignment="Top" Width="1371" Stretch="Fill" Source="ms-appx:///Assets/HomePicture2.png">
+                <Image.Projection>
+                    <PlaneProjection CenterOfRotationX="0" RotationX="180"/>
+                </Image.Projection>
+            </Image>
             <Rectangle Fill="Black" HorizontalAlignment="Left" Height="25" Margin="0,575,0,0" Stroke="Black" VerticalAlignment="Top" Width="1371" Opacity="0.5"/>
             <Grid x:Name="LinksGrid" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="1371" Margin="0,591,0,0">
                 <Grid.ColumnDefinitions>
@@ -44,9 +49,9 @@
                 <Button x:Name="GoogleButton" Content="Google+" HorizontalAlignment="Left" Margin="1248,-3,0,-3" VerticalAlignment="Top" Height="46" BorderThickness="1,0,0,0" FontSize="10" BorderBrush="#FF646464"/>
                 <Button x:Name="TwitterButton" Content="twitter" HorizontalAlignment="Left" Margin="1313,-3,-3.286,-3" VerticalAlignment="Top" Height="46" BorderThickness="1,0" FontSize="10" BorderBrush="#FF646464"/>
             </Grid>
-            <TextBlock HorizontalAlignment="Left" Margin="10,114,0,0" TextWrapping="Wrap" Text="Ønsker du et billede der er anderledes, kreativt, viser en anderledes side af dig selv eller noget helt andet, så er du havnet hos den helt rigtige fotograf. Jeg er lyttende, kreativ og kombinerer god teknisk kunnen med en respektfuld og behagelig person - så du kan få taget de billeder du længes efter. Det kan være portræt, bryllup eller noget helt tredje. Og favner jeg ikke opgaven, så er jeg ærlig nok til at fortælle dig det, fremfor at levere et dårligt produkt. Du, dine ønsker og din tilfredshed er det jeg leverer. Og så endda til en særdeles rimelig pris." VerticalAlignment="Top" Height="300" Width="743" FontSize="20"/>
-            <TextBlock HorizontalAlignment="Left" Margin="903,114,0,0" TextWrapping="Wrap" Text="Jeg er nu gået i gang med at udvikle mine evner indenfor portrætfotografering endnu mere. Jeg stiler efter at levere portrætter der samlet set afspejler modellens ønsker, udstråling og &quot;glimt&quot;." VerticalAlignment="Top" Height="300" Width="458" FontSize="20"/>
-            <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="Rolf Windfeld - Fotograf med speciale i unikke portrætter" VerticalAlignment="Top" Height="83" Width="743" Foreground="#FF640000" FontSize="36"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,114,0,0" TextWrapping="Wrap" Text="Ønsker du et billede der er anderledes, kreativt, viser en anderledes side af dig selv eller noget helt andet, så er du havnet hos den helt rigtige fotograf. Jeg er lyttende, kreativ og kombinerer god teknisk kunnen med en respektfuld og behagelig person - så du kan få taget de billeder du længes efter. Det kan være portræt, bryllup eller noget helt tredje. Og favner jeg ikke opgaven, så er jeg ærlig nok til at fortælle dig det, fremfor at levere et dårligt produkt. Du, dine ønsker og din tilfredshed er det jeg leverer. Og så endda til en særdeles rimelig pris." VerticalAlignment="Top" Height="300" Width="604" FontSize="20" Foreground="Black"/>
+            <TextBlock HorizontalAlignment="Left" Margin="903,114,0,0" TextWrapping="Wrap" Text="Jeg er nu gået i gang med at udvikle mine evner indenfor portrætfotografering endnu mere. Jeg stiler efter at levere portrætter der samlet set afspejler modellens ønsker, udstråling og &quot;glimt&quot;." VerticalAlignment="Top" Height="300" Width="458" FontSize="20" Foreground="Black"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="Rolf Windfeld - Fotograf med speciale i unikke portrætter" VerticalAlignment="Top" Height="83" Width="604" Foreground="#FF640000" FontSize="36"/>
             <TextBlock HorizontalAlignment="Left" Margin="903,0,0,0" TextWrapping="Wrap" Text="Seneste nyt" VerticalAlignment="Top" Foreground="#FF640000" FontSize="36"/>
             <Grid x:Name="MainNavigationGrid" HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="1371" Margin="0,446,0,0">
                 <Grid.Background>
