@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using FotografApp.Common;
 
 namespace FotografApp.ViewModel
 {
@@ -18,7 +19,7 @@ namespace FotografApp.ViewModel
         {
         }
 
-        public ICommand CreatUserCommand
+        public ICommand CreateUserCommand
         {
             get { return _createUserCommand ?? (_createUserCommand = new RelayCommand(UserHandler.CreateUser())); }
             set { _createUserCommand = value; }
