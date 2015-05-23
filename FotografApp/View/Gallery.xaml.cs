@@ -112,5 +112,10 @@ namespace FotografApp.View
         {
             Frame.Navigate(typeof(Order));
         }
+
+        private void ExitAppAGallery(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Exit();
+        }
     }
 }

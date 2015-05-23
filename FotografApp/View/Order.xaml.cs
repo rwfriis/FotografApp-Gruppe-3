@@ -137,5 +137,10 @@ namespace FotografApp.View
         {
 
         }
+
+        private void ExitAppAtOrder(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Exit();
+        }
     }
 }

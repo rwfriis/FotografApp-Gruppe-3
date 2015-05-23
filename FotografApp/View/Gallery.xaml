@@ -18,6 +18,20 @@
             <MenuFlyoutItem x:Name="KreativtFlyOut" Text="Kreativt"/>
         </MenuFlyout>
     </Page.Resources>
+    <Page.BottomAppBar>
+        <AppBar>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal">
+                    <AppBarButton x:Name="ExitAppButton" HorizontalAlignment="Stretch" Icon="Cancel" Label="Exit" VerticalAlignment="Stretch" Margin="0,0,0,-0.143" Click="ExitAppAGallery"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal"/>
+            </Grid>
+        </AppBar>
+    </Page.BottomAppBar>
 
     <!--
         This grid acts as a root panel for the page that defines two rows:
@@ -51,26 +65,26 @@
                     <PlaneProjection CenterOfRotationX="0" RotationX="180"/>
                 </Image.Projection>
             </Image>
-            <Rectangle Fill="Black" HorizontalAlignment="Left" Height="591" Stroke="Black" VerticalAlignment="Top" Width="1371" Opacity="0.5"/>
-            <Grid x:Name="LinksGrid" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="1371" Margin="0,591,0,0">
+            <Rectangle Fill="Black" HorizontalAlignment="Left" Height="591" Stroke="Black" VerticalAlignment="Top" Width="1375" Opacity="0.5" Margin="-2,0"/>
+            <Grid x:Name="LinksGrid" HorizontalAlignment="Left" Height="43" VerticalAlignment="Top" Width="1376" Margin="-3,591,-2,-3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.Background>
                     <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Bagkilde.png"/>
                 </Grid.Background>
-                <TextBlock HorizontalAlignment="Left" Margin="123,14,0,0" TextWrapping="Wrap" Text="Rolf Windfeld © 2015 | OPHAVSRET" VerticalAlignment="Top" Height="16" Width="337" FontSize="10" Foreground="#FF646464"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,14,0,0" TextWrapping="Wrap" Text="Rolf Windfeld © 2015 | OPHAVSRET" VerticalAlignment="Top" Height="16" Width="337" FontSize="10" Foreground="#FF646464"/>
                 <Button x:Name="FacebookButton" Content="Facebook" HorizontalAlignment="Left" Margin="1178,-3,0,-3" VerticalAlignment="Top" Height="46" BorderThickness="1,0,0,0" FontSize="10" BorderBrush="#FF646464" Foreground="#FF646464"/>
                 <Button x:Name="GoogleButton" Content="Google+" HorizontalAlignment="Left" Margin="1248,-3,0,-3" VerticalAlignment="Top" Height="46" BorderThickness="1,0,0,0" FontSize="10" BorderBrush="#FF646464" Foreground="#FF646464"/>
                 <Button x:Name="TwitterButton" Content="twitter" HorizontalAlignment="Left" Margin="1313,-3,-3.286,-3" VerticalAlignment="Top" Height="46" BorderThickness="1,0" FontSize="10" BorderBrush="#FF646464" Foreground="#FF646464"/>
             </Grid>
-            <Grid x:Name="MainNavigationGrid" HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="1371" Margin="0,446,0,0">
+            <Grid x:Name="MainNavigationGrid" HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="1373" Margin="0,446,-2,0">
                 <Grid.Background>
                     <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/MainBag.png"/>
                 </Grid.Background>
                 <Rectangle x:Name="MainNameB" HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="474" Margin="-1,0,0,0">
                     <Rectangle.Fill>
-                        <ImageBrush ImageSource="ms-appx:///Assets/LogoBag.png"/>
+                        <ImageBrush ImageSource="ms-appx:///Assets/LogoBag2.png" Stretch="UniformToFill"/>
                     </Rectangle.Fill>
                 </Rectangle>
                 <Button x:Name="OmButton" Content="Om" HorizontalAlignment="Left" Margin="612,-2,0,-4" VerticalAlignment="Top" Height="146" Width="150" BorderThickness="0,0,2,0" Click="OmAtGallery"/>

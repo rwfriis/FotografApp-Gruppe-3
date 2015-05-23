@@ -66,5 +66,10 @@ namespace FotografApp.View
         {
             Frame.Navigate(typeof(Gallery));
         }
+
+        private void ExitAppAtHome(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Exit();
+        }
     }
 }

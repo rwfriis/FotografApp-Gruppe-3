@@ -145,6 +145,7 @@
     <Content Include="Assets\HomePicture2.png" />
     <Content Include="Assets\Logo.scale-100.png" />
     <Content Include="Assets\LogoBag.png" />
+    <Content Include="Assets\LogoBag2.png" />
     <Content Include="Assets\MainBag.png" />
     <Content Include="Assets\SmallLogo.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
