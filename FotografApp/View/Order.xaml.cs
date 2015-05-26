@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // The Item Detail Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234232
+using FotografApp.Model;
 
 namespace FotografApp.View
 {
@@ -141,6 +142,11 @@ namespace FotografApp.View
         private void ExitAppAtOrder(object sender, RoutedEventArgs e)
         {
             Application.Current.Exit();
+        }
+
+        private void RegisterButton(object sender, RoutedEventArgs e)
+        {
+            Register.ValidateRegistration(NavnSource2.Text, PasswordSource.Password, CPasswordSource.Password, E_mailSource.Text, TelefonSource2.Text);
         }
     }
 }

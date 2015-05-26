@@ -33,7 +33,7 @@
                     <TextBox x:Name="TelefonSource2" TextWrapping="Wrap" FontSize="12"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Left" Height="77" VerticalAlignment="Top" Width="140" Margin="-20,216,-20,-20">
-                    <AppBarButton x:Name="RegisterAppButton2" HorizontalAlignment="Stretch" Icon="Add" Label="Register" VerticalAlignment="Stretch"/>
+                    <AppBarButton x:Name="RegisterAppButton2" HorizontalAlignment="Stretch" Icon="Add" Label="Register" VerticalAlignment="Stretch" Click="RegisterButton"/>
                 </StackPanel>
             </Grid>
         </Flyout>

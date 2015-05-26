@@ -75,7 +75,7 @@ namespace FotografApp.View
 
         private void RegisterButton(object sender, RoutedEventArgs e)
         {
-            Register.ValidateRegistration(NavnSource.Text, PasswordSource.Text, CPasswordSource.Text, E_mailSource.Text, TelefonSource.Text);
+            Register.ValidateRegistration(NavnSource.Text, PasswordSource.Password, CPasswordSource.Password, E_mailSource.Text, TelefonSource.Text);
         }
     }
 }
