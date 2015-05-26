@@ -19,16 +19,16 @@
         <Flyout x:Key="RegisterAppFlyOut">
             <Grid Height="273" Width="100">
                 <StackPanel HorizontalAlignment="Left" Height="233" VerticalAlignment="Top" Width="140" Margin="-20,-17,-20,0">
-                    <TextBlock x:Name="Navn" TextWrapping="Wrap" Text="Navn:"/>
-                    <TextBox x:Name="NavnSource" TextWrapping="Wrap"/>
-                    <TextBlock x:Name="Password" TextWrapping="Wrap" Text="Password:"/>
-                    <TextBox x:Name="PasswordSource" TextWrapping="Wrap"/>
-                    <TextBlock x:Name="Confirm_Password" TextWrapping="Wrap" Text="Confirm Password:"/>
-                    <TextBox x:Name="CPasswordSource" TextWrapping="Wrap"/>
-                    <TextBlock x:Name="E_mail" TextWrapping="Wrap" Text="E-mail:"/>
-                    <TextBox x:Name="E_mailSource" TextWrapping="Wrap"/>
-                    <TextBlock x:Name="Telefon" TextWrapping="Wrap" Text="Telefon:"/>
-                    <TextBox x:Name="TelefonSource" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="Navn" TextWrapping="Wrap" Text="Navn:" FontSize="12"/>
+                    <TextBox x:Name="NavnSource" TextWrapping="Wrap" FontSize="12" Height="18"/>
+                    <TextBlock x:Name="Password" TextWrapping="Wrap" Text="Password:" FontSize="12"/>
+                    <TextBox x:Name="PasswordSource" TextWrapping="Wrap" FontSize="12"/>
+                    <TextBlock x:Name="Confirm_Password" TextWrapping="Wrap" Text="Confirm Password:" FontSize="12"/>
+                    <TextBox x:Name="CPasswordSource" TextWrapping="Wrap" FontSize="12"/>
+                    <TextBlock x:Name="E_mail" TextWrapping="Wrap" Text="E-mail:" FontSize="12"/>
+                    <TextBox x:Name="E_mailSource" TextWrapping="Wrap" FontSize="12"/>
+                    <TextBlock x:Name="Telefon" TextWrapping="Wrap" Text="Telefon:" FontSize="12"/>
+                    <TextBox x:Name="TelefonSource" TextWrapping="Wrap" FontSize="12"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Left" Height="77" VerticalAlignment="Top" Width="140" Margin="-20,216,-20,-20">
                     <AppBarButton x:Name="RegisterAppButton2" HorizontalAlignment="Stretch" Icon="Add" Label="Register" VerticalAlignment="Stretch"/>
@@ -59,7 +59,7 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Orientation="Horizontal"/>
                 <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
-                    <AppBarButton x:Name="RegisterAppButton" HorizontalAlignment="Stretch" Icon="Accept" Label="AppBarButton" VerticalAlignment="Stretch" Flyout="{StaticResource RegisterAppFlyOut}"/>
+                    <AppBarButton x:Name="RegisterAppButton" HorizontalAlignment="Stretch" Icon="Accept" Label="Register" VerticalAlignment="Stretch" Flyout="{StaticResource RegisterAppFlyOut}"/>
                     <AppBarButton x:Name="LoginAppButton" HorizontalAlignment="Stretch" Icon="Contact" Label="Login" VerticalAlignment="Stretch" Flyout="{StaticResource LoginFlyOut}"/>
                 </StackPanel>
             </Grid>
