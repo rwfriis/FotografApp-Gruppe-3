@@ -14,7 +14,7 @@
             <MenuFlyoutItem x:Name="BryllupFlyOut" Text="Bryllup" Click="BryllupAtHome"/>
             <MenuFlyoutItem x:Name="KreativtFlyOut" Text="Kreativt" Click="KreativtAtHome"/>
         </MenuFlyout>
-        <MenuFlyout x:Key="RegisterFlyOut"/>
+        <MenuFlyout x:Name="RegisterFlyOut" x:Key="RegisterFlyOut"/>
         <MenuFlyout x:Key="LoginFlyOut"/>
     </Page.Resources>
     <Page.BottomAppBar>
@@ -40,7 +40,13 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Orientation="Horizontal"/>
                 <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
-                    <AppBarButton x:Name="RegisterAppButton" HorizontalAlignment="Stretch" Icon="AddFriend" Label="Register" VerticalAlignment="Stretch" Flyout="{StaticResource RegisterFlyOut}"/>
+                    <AppBarButton x:Name="RegisterAppButton" HorizontalAlignment="Stretch" Icon="Accept" Label="AppBarButton" VerticalAlignment="Stretch">
+                        <AppBarButton.Flyout>
+                            <Flyout>
+                                <Grid Height="100" Width="100"/>
+                            </Flyout>
+                        </AppBarButton.Flyout>
+                    </AppBarButton>
                     <AppBarButton x:Name="LoginAppButton" HorizontalAlignment="Stretch" Icon="Contact" Label="Login" VerticalAlignment="Stretch" Flyout="{StaticResource LoginFlyOut}"/>
                 </StackPanel>
             </Grid>
