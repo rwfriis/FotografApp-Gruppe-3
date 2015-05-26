@@ -18,14 +18,17 @@ namespace FotografApp.Model
             set { _isLoggedIn = value; }
         }
 
-        public bool UserDoesNotExist { get; set; }
-        public bool PasswordIsWrong { get; set; }
+        public static bool UserDoesNotExist { get; set; }
+        public static bool PasswordIsWrong { get; set; }
 
-        public void LoginAsUser(string email, string password)
+        public static void LoginAsUser(string email, string password)
         {
             List<User> user = DatabasePersistencyHandler.Instance.GetUsers();
             bool exist = false;
             bool passwordIsTrue = false;
+
+            PasswordIsWrong = true;
+            UserDoesNotExist = true;
 
             foreach (var users in user)
             {
@@ -44,6 +47,8 @@ namespace FotografApp.Model
                     _isLoggedIn = true;
                     PasswordIsWrong = false;
                     UserDoesNotExist = false;
+
+                    //User Singleton her
                 }
                 else
                 {

@@ -46,7 +46,7 @@
                     <PasswordBox x:Name="LPasswordSource" BorderThickness="0,2"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Left" Height="76" VerticalAlignment="Top" Width="140" Margin="-20,76,-20,-16">
-                    <AppBarButton x:Name="LoginAppButton2" HorizontalAlignment="Stretch" Icon="Accept" Label="Login" VerticalAlignment="Stretch" FontSize="12"/>
+                    <AppBarButton x:Name="LoginAppButton2" HorizontalAlignment="Stretch" Icon="Accept" Label="Login" VerticalAlignment="Stretch" FontSize="12" Click="LoginButton"/>
                 </StackPanel>
             </Grid>
         </Flyout>

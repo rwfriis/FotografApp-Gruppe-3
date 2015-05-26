@@ -143,5 +143,10 @@ namespace FotografApp.View
         {
             Register.ValidateRegistration(NavnSource.Text, PasswordSource.Password, CPasswordSource.Password, E_mailSource.Text, TelefonSource.Text);
         }
+
+        private void LoginButton(object sender, RoutedEventArgs e)
+        {
+            Login.LoginAsUser(LEmailSource.Text, LPasswordSource.Password);
+        }
     }
 }

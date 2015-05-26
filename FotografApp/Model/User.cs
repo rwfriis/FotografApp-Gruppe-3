@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FotografApp.Persistency;
 
 namespace FotografApp.Model
 {
@@ -20,6 +21,23 @@ namespace FotografApp.Model
             Password = password;
             Email = email;
             Tlf = tlf;
+        }
+
+        public User(string email)
+        {
+            var users = new List<User>();
+            users = DatabasePersistencyHandler.Instance.GetUsers();
+
+            foreach (var user in users)
+            {
+                if (email.Equals(user.Email))
+                {
+                    user.Name = Name;
+                    user.Password = Password;
+                    user.Email = Email;
+                    user.Tlf = Tlf;
+                }
+            }
         }
     }
 }
