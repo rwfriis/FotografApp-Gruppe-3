@@ -24,8 +24,8 @@ namespace FotografApp.Model
         public void LoginAsUser(string email, string password)
         {
             List<User> user = DatabasePersistencyHandler.Instance.GetUsers();
-            bool exist;
-            bool passwordIsTrue;
+            bool exist = false;
+            bool passwordIsTrue = false;
 
             foreach (var users in user)
             {
