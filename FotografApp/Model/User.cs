@@ -8,9 +8,18 @@ namespace FotografApp.Model
 {
     class User
     {
-        private string name;
-        private string email;
-        private string tlf;
-        private bool typeOfUser;
+        public string Name { get; set; }
+        public string Password { get; set; }
+        public string Email { get; set; }
+        public string Tlf { get; set; }
+        public bool TypeOfUser { get; set; }
+
+        public User(string name, string password, string email, string tlf)
+        {
+            Name = name;
+            Password = password;
+            Email = email;
+            Tlf = tlf;
+        }
     }
 }
