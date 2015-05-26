@@ -23,7 +23,7 @@ namespace FotografApp.Model
                         exist = true;
                     }
                 }
-                if (exist == true)
+                if (exist == false)
                     {
                         if (password.Equals(confirmPassword) && password.Length < 51 && password.Length > 5)
                         {
