@@ -22,7 +22,7 @@ namespace FotografApp.View
     /// A page that displays details for a single item within a group while allowing gestures to
     /// flip through other items belonging to the same group.
     /// </summary>
-    public sealed partial class About : Page
+    public sealed partial class Contact : Page
     {
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
@@ -44,7 +44,7 @@ namespace FotografApp.View
             get { return this.navigationHelper; }
         }
 
-        public About()
+        public Contact()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
@@ -98,47 +98,42 @@ namespace FotografApp.View
 
         #endregion
 
-        private void OmAtAbout(object sender, RoutedEventArgs e)
+        private void OmAtContact(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(About));
         }
 
-        private void KontaktAtAbout(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Contact));
-        }
-
-        private void BestilAtAbout(object sender, RoutedEventArgs e)
+        private void BestilAtContact(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Order));
         }
 
-        private void PortrætAtAbout(object sender, RoutedEventArgs e)
+        private void PortrætAtContact(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Gallery));
         }
 
-        private void NaturAtAbout(object sender, RoutedEventArgs e)
+        private void NaturAtContact(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Gallery));
         }
 
-        private void ArkitekturAtAbout(object sender, RoutedEventArgs e)
+        private void ArkitekturAtContact(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Gallery));
         }
 
-        private void BryllupAtAbout(object sender, RoutedEventArgs e)
+        private void BryllupAtContact(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Gallery));
         }
 
-        private void KreativtAtAbout(object sender, RoutedEventArgs e)
+        private void KreativtAtContact(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Gallery));
         }
 
-        private void ExitAppAtAbout(object sender, RoutedEventArgs e)
+        private void ExitAppAtContact(object sender, RoutedEventArgs e)
         {
             Application.Current.Exit();
         }
