@@ -26,5 +26,50 @@ namespace FotografApp.View
         {
             this.InitializeComponent();
         }
+
+        private void OmAtHome(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof (About));
+        }
+
+        private void KontaktAtHome(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof (Contact));
+        }
+
+        private void BestilAtHome(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Order));
+        }
+
+        private void PortrætAtHome(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Gallery));
+        }
+
+        private void NaturAtHome(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Gallery));
+        }
+
+        private void ArkitekturAHome(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Gallery));
+        }
+
+        private void BryllupAtHome(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Gallery));
+        }
+
+        private void KreativtAtHome(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Gallery));
+        }
+
+        private void ExitAppAtHome(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Exit();
+        }
     }
 }
