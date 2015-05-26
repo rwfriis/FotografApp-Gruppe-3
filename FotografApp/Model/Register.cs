@@ -14,7 +14,7 @@ namespace FotografApp.Model
             List<User> user = DatabasePersistencyHandler.Instance.GetUsers();
             bool exist = false;
 
-            if (!name.Contains(null) && !password.Contains(null) && !confirmPassword.Contains(null) && !email.Contains(null) && !tlf.Contains(null))
+            if (!string.IsNullOrWhiteSpace(name) && !string.IsNullOrWhiteSpace(password) && !string.IsNullOrWhiteSpace(confirmPassword) && !string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(tlf))
             {
                 foreach (var users in user)
                 {
@@ -25,7 +25,7 @@ namespace FotografApp.Model
                 }
                 if (exist == false)
                     {
-                        if (password.Equals(confirmPassword) && password.Length < 51 && password.Length > 5)
+                        if (password.Equals(confirmPassword) && password.Length < 51 && password.Length >= 5)
                         {
                             if (name.Length > 5 && name.Length < 51)
                             {

@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
+using FotografApp.Model;
 
 namespace FotografApp.View
 {
@@ -70,6 +71,11 @@ namespace FotografApp.View
         private void ExitAppAtHome(object sender, RoutedEventArgs e)
         {
             Application.Current.Exit();
+        }
+
+        private void RegisterButton(object sender, RoutedEventArgs e)
+        {
+            Register.ValidateRegistration(NavnSource.Text, PasswordSource.Text, CPasswordSource.Text, E_mailSource.Text, TelefonSource.Text);
         }
     }
 }
