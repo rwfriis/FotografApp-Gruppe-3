@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FotografApp.Model;
+using FotografApp.ViewModel;
 
 namespace FotografApp.Handler
 {
@@ -19,9 +21,9 @@ namespace FotografApp.Handler
             
         }
 
-        public void CheckUser()
+        public void LoginUser()
         {
-            
+            Login.LoginAsUser(_viewModel.email, _viewModel.password);
         }
     }
 }

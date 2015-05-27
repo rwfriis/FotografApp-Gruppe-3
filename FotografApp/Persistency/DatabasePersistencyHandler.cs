@@ -6,6 +6,7 @@ using System.Net.Http.Headers;
 using System.ServiceModel.Channels;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.ApplicationModel.Core;
 using FotografApp.Model;
 using Newtonsoft.Json;
 
@@ -38,6 +39,31 @@ namespace FotografApp.Persistency
         }
 
         #region GetData
+
+        public User GetUser(string email, string password)
+        {
+            User user;
+            try
+            {
+                var response = _client.GetAsync("Users/" + email).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    string json = response.Content.ReadAsStringAsync().Result;
+                    user = JsonConvert.DeserializeObject<User>(json);
+                    if (user != null && user.Password == password)
+                    {
+                        return user;
+                    }
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Message = ex.Message;
+            }
+            return null;
+        }
+
         public List<User> GetUsers()
         {
             List<User> users = new List<User>();

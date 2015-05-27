@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls.Primitives;
 using FotografApp.Persistency;
+using FotografApp.ViewModel;
 
 namespace FotografApp.Model
 {
@@ -23,42 +24,47 @@ namespace FotografApp.Model
 
         public static void LoginAsUser(string email, string password)
         {
-            List<User> user = DatabasePersistencyHandler.Instance.GetUsers();
-            bool exist = false;
-            bool passwordIsTrue = false;
-
-            PasswordIsWrong = true;
-            UserDoesNotExist = true;
-
-            foreach (var users in user)
+            User user = DatabasePersistencyHandler.Instance.GetUser(email, password);
+            if (user != null)
             {
-                if (users.Email.Equals(email))
-                {
-                    exist = true;
-                    if (users.Password.Equals(password))
-                        passwordIsTrue = true;
-                }
+                Singleton.Instance.CurrentUser = user;
             }
+            //List<User> user = DatabasePersistencyHandler.Instance.GetUsers();
+            //bool exist = false;
+            //bool passwordIsTrue = false;
 
-            if (exist == true)
-            {
-                if (passwordIsTrue == true)
-                {
-                    _isLoggedIn = true;
-                    PasswordIsWrong = false;
-                    UserDoesNotExist = false;
+            //PasswordIsWrong = true;
+            //UserDoesNotExist = true;
 
-                    //User Singleton her
-                }
-                else
-                {
-                    PasswordIsWrong = true;
-                }
-            }
-            else
-            {
-                UserDoesNotExist = true;
-            }
+            //foreach (var users in user)
+            //{
+            //    if (users.Email.Equals(email))
+            //    {
+            //        exist = true;
+            //        if (users.Password.Equals(password))
+            //            passwordIsTrue = true;
+            //    }
+            //}
+
+            //if (exist == true)
+            //{
+            //    if (passwordIsTrue == true)
+            //    {
+            //        _isLoggedIn = true;
+            //        PasswordIsWrong = false;
+            //        UserDoesNotExist = false;
+
+            //        //User Singleton her
+            //    }
+            //    else
+            //    {
+            //        PasswordIsWrong = true;
+            //    }
+            //}
+            //else
+            //{
+            //    UserDoesNotExist = true;
+            //}
         }
     }
 }

@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Item Detail Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234232
 using FotografApp.Model;
+using FotografApp.ViewModel;
 
 namespace FotografApp.View
 {
@@ -50,6 +51,11 @@ namespace FotografApp.View
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
+
+            if (Singleton.Instance.CurrentUser != null)
+            {
+                MainLoginInfo.Text = "logged in";
+            }
         }
 
         /// <summary>

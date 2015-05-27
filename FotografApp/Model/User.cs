@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FotografApp.Persistency;
+using FotografApp.ViewModel;
 
 namespace FotografApp.Model
 {
@@ -36,6 +37,7 @@ namespace FotografApp.Model
                     user.Password = Password;
                     user.Email = Email;
                     user.Tlf = Tlf;
+                    break;
                 }
             }
         }

@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 using FotografApp.Model;
+using FotografApp.ViewModel;
 
 namespace FotografApp.View
 {
@@ -26,6 +27,7 @@ namespace FotografApp.View
         public Home()
         {
             this.InitializeComponent();
+            
         }
 
         private void OmAtHome(object sender, RoutedEventArgs e)
