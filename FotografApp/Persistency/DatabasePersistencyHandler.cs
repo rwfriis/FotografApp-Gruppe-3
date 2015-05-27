@@ -42,19 +42,17 @@ namespace FotografApp.Persistency
 
         public User GetUser(string email, string password)
         {
-            User user;
             try
             {
-                var response = _client.GetAsync("Users/" + email).Result;
+                var response = _client.GetAsync("api/Users").Result;
                 if (response.IsSuccessStatusCode)
                 {
-                    string json = response.Content.ReadAsStringAsync().Result;
-                    user = JsonConvert.DeserializeObject<User>(json);
-                    if (user != null && user.Password == password)
+                    var json = response.Content.ReadAsStringAsync().Result;
+                    var users = JsonConvert.DeserializeObject<List<User>>(json);
+                    foreach (var user in users.Where(user => user.Password == password && user.Email == email))
                     {
                         return user;
                     }
-                    return null;
                 }
             }
             catch (Exception ex)

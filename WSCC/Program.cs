@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
-using WS;
+using Webservice;
 
 namespace WSCC
 {
@@ -24,18 +24,16 @@ namespace WSCC
 
                 try
                 {
-                    var response = client.GetAsync("api/Users/").Result;
+                    var response = client.GetAsync("api/Users").Result;
                     if (response.IsSuccessStatusCode)
                     {
-                        var test = response.Content.ReadAsStringAsync().Result;
-                        //var orders = response.Content.ReadAsAsync<IEnumerable<User>>().Result;
-                        //Console.WriteLine(orders.Count());
-                        //foreach (var order in orders)
-                        //{
-                        //    Console.WriteLine(order);
-                        //}
-                        //Console.WriteLine("done");
-                        Console.WriteLine(test);
+                        var orders = response.Content.ReadAsAsync<List<Users>>().Result;
+                        Console.WriteLine(orders.Count());
+                        foreach (var order in orders)
+                        {
+                            Console.WriteLine(order);
+                        }
+                        Console.WriteLine("done");
                     }
                     else
                     {

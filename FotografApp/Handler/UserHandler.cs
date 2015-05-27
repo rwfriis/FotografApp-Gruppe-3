@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FotografApp.Model;
+using FotografApp.View;
 using FotografApp.ViewModel;
 
 namespace FotografApp.Handler
@@ -21,9 +22,16 @@ namespace FotografApp.Handler
             
         }
 
+        public void LogoutUser()
+        {
+            Singleton.Instance.CurrentUser = null;
+            _viewModel.SetLoginButton();
+        }
+
         public void LoginUser()
         {
             Login.LoginAsUser(_viewModel.email, _viewModel.password);
+            _viewModel.SetLoginButton();
         }
     }
 }

@@ -60,7 +60,8 @@
                 <StackPanel Orientation="Horizontal"/>
                 <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
                     <AppBarButton x:Name="RegisterAppButton" HorizontalAlignment="Stretch" Icon="AddFriend" Label="Register" VerticalAlignment="Stretch" Flyout="{StaticResource RegisterAppFlyOut}"/>
-                    <AppBarButton x:Name="LoginAppbutton" HorizontalAlignment="Stretch" Icon="Contact" Label="AppBarButton" VerticalAlignment="Stretch" Flyout="{StaticResource LoginAppFlyOut}"/>
+                    <AppBarButton x:Name="LoginAppbutton" HorizontalAlignment="Stretch" Icon="Contact" Label="Login" VerticalAlignment="Stretch" Flyout="{StaticResource LoginAppFlyOut}"/>
+                    <AppBarButton x:Name="LogoutAppbutton" Visibility="Collapsed" HorizontalAlignment="Stretch" Icon="Contact" Label="Logout" VerticalAlignment="Stretch"/>
                 </StackPanel>
             </Grid>
         </AppBar>

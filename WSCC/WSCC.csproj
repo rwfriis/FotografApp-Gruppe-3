@@ -58,9 +58,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WS\WS.csproj">
-      <Project>{34048144-f8ee-4c8f-83d5-ec49173c9271}</Project>
-      <Name>WS</Name>
+    <ProjectReference Include="..\Webservice\Webservice.csproj">
+      <Project>{a8adf62c-c826-4613-a4bc-cad2ef247ba0}</Project>
+      <Name>Webservice</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
