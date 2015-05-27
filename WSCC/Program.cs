@@ -24,7 +24,7 @@ namespace WSCC
 
                 try
                 {
-                    var response = client.GetAsync("api/Users/test").Result;
+                    var response = client.GetAsync("api/Users/").Result;
                     if (response.IsSuccessStatusCode)
                     {
                         var test = response.Content.ReadAsStringAsync().Result;
