@@ -30,7 +30,7 @@ namespace FotografApp.Handler
 
         public void LoginUser()
         {
-            Login.LoginAsUser(_viewModel.email, _viewModel.password);
+            Login.LoginAsUser(_viewModel.Email, _viewModel.Password);
             _viewModel.SetLoginButton();
         }
     }

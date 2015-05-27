@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using Webservice;
 
 namespace WSCC
@@ -22,28 +23,20 @@ namespace WSCC
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                try
+                var response = client.GetAsync("api/Users").Result;
+                if (response.IsSuccessStatusCode)
                 {
-                    var response = client.GetAsync("api/Users").Result;
-                    if (response.IsSuccessStatusCode)
+                    var json = response.Content.ReadAsStringAsync().Result;
+                    var users = JsonConvert.DeserializeObject<List<Users>>(json);
+                    Console.WriteLine(users.Count());
+                    foreach (var user in users.Where(user => user.Password == "1234" && user.Email == "test"))
                     {
-                        var orders = response.Content.ReadAsAsync<List<Users>>().Result;
-                        Console.WriteLine(orders.Count());
-                        foreach (var order in orders)
-                        {
-                            Console.WriteLine(order);
-                        }
-                        Console.WriteLine("done");
-                    }
-                    else
-                    {
-                        Console.WriteLine(response.StatusCode);
+                        Console.WriteLine(user.Email);
                     }
                 }
-                catch (Exception)
+                else
                 {
-
-                    throw;
+                    Console.WriteLine(response.StatusCode);
                 }
             }
             Console.ReadKey();

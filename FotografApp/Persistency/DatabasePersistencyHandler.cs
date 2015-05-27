@@ -44,7 +44,7 @@ namespace FotografApp.Persistency
         {
             try
             {
-                var response = _client.GetAsync("api/Users").Result;
+                var response = _client.GetAsync("Users").Result;
                 if (response.IsSuccessStatusCode)
                 {
                     var json = response.Content.ReadAsStringAsync().Result;

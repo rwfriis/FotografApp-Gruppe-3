@@ -19,27 +19,42 @@ namespace FotografApp.ViewModel
         private ICommand _createUserCommand;
         private ICommand _loginCommand;
         private ICommand _logoutCommand;
-        private string _email = "Email";
-        private string _password = "Password";
+        private string _email;
+        private string _password;
+        private string _login = "Visible";
+        private string _logout = "Collapsed";
 
         public OrderHandler OrderHandler { get; set; }
         public UserHandler UserHandler { get; set; }
 
-        public string email
-        {
-            get { return _email; }
-            set { _email = value; OnPropertyChanged(); }
-        }
-        public string password
-        {
-            get { return _password; }
-            set { _password = value; OnPropertyChanged(); }
-        }
-
+       
         public MainViewModel()
         {
             UserHandler = new UserHandler(this);
             OrderHandler = new OrderHandler(this);
+        }
+
+        public string VisibleLogin
+        {
+            get { return _login; }
+            set { _login = value; OnPropertyChanged(); }
+        }
+
+        public string VisibleLogout
+        {
+            get { return _logout; }
+            set { _logout = value; OnPropertyChanged(); }
+        }
+
+        public string Email
+        {
+            get { return _email; }
+            set { _email = value; OnPropertyChanged(); }
+        }
+        public string Password
+        {
+            get { return _password; }
+            set { _password = value; OnPropertyChanged(); }
         }
 
         public ICommand CreateUserCommand
@@ -64,8 +79,13 @@ namespace FotografApp.ViewModel
         {
             if (Singleton.Instance.CurrentUser != null)
             {
-                ((AppBarButton)((Frame)Window.Current.Content).FindName("LoginAppButton")).Visibility = Visibility.Collapsed;
-                ((AppBarButton)((Frame)Window.Current.Content).FindName("LogoutAppButton")).Visibility = Visibility.Visible;
+                VisibleLogin = "Collapsed";
+                VisibleLogout = "Visible";
+            }
+            else
+            {
+                VisibleLogout = "Collapsed";
+                VisibleLogin = "Visible";
             }
         }
 
