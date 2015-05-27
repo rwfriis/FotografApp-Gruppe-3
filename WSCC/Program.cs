@@ -24,20 +24,27 @@ namespace WSCC
 
                 try
                 {
-                    var response = client.GetAsync("api/orders").Result;
+                    var response = client.GetAsync("api/Users/test").Result;
                     if (response.IsSuccessStatusCode)
                     {
-                        var orders = response.Content.ReadAsAsync<IEnumerable<Order>>().Result;
-                        foreach (var order in orders)
-                        {
-                            Console.WriteLine(order);
-                        }
-
+                        var test = response.Content.ReadAsStringAsync().Result;
+                        //var orders = response.Content.ReadAsAsync<IEnumerable<User>>().Result;
+                        //Console.WriteLine(orders.Count());
+                        //foreach (var order in orders)
+                        //{
+                        //    Console.WriteLine(order);
+                        //}
+                        //Console.WriteLine("done");
+                        Console.WriteLine(test);
+                    }
+                    else
+                    {
+                        Console.WriteLine(response.StatusCode);
                     }
                 }
                 catch (Exception)
                 {
-                    
+
                     throw;
                 }
             }
