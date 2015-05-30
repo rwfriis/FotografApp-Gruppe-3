@@ -19,14 +19,14 @@ namespace FotografApp.ViewModel
         private ICommand _createUserCommand;
         private ICommand _loginCommand;
         private ICommand _logoutCommand;
-        private string _email;
-        private string _password;
+        
         private string _login = "Visible";
         private string _logout = "Collapsed";
 
         public OrderHandler OrderHandler { get; set; }
         public UserHandler UserHandler { get; set; }
-
+        public static string Email { get; set; }
+        public static string Password { get; set; }
        
         public MainViewModel()
         {
@@ -46,16 +46,7 @@ namespace FotografApp.ViewModel
             set { _logout = value; OnPropertyChanged(); }
         }
 
-        public string Email
-        {
-            get { return _email; }
-            set { _email = value; OnPropertyChanged(); }
-        }
-        public string Password
-        {
-            get { return _password; }
-            set { _password = value; OnPropertyChanged(); }
-        }
+        
 
         public ICommand CreateUserCommand
         {

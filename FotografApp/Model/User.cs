@@ -14,14 +14,17 @@ namespace FotografApp.Model
         public string Password { get; set; }
         public string Email { get; set; }
         public string Tlf { get; set; }
-        public bool TypeOfUser { get; set; }
+        public int TypeOfUser { get; set; }
+        public int Id { get; set; }
 
-        public User(string name, string password, string email, string tlf)
+        public User(string email, string name, string tlf, string password, int type, int id)
         {
             Name = name;
             Password = password;
             Email = email;
             Tlf = tlf;
+            TypeOfUser = type;
+            Id = id;
         }
 
         public User(string email)

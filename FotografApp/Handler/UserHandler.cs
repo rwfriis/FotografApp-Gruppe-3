@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.ApplicationModel.Background;
 using FotografApp.Model;
 using FotografApp.View;
 using FotografApp.ViewModel;
@@ -30,7 +31,7 @@ namespace FotografApp.Handler
 
         public void LoginUser()
         {
-            Login.LoginAsUser(_viewModel.Email, _viewModel.Password);
+            Login.LoginAsUser(MainViewModel.Email, MainViewModel.Password);
             _viewModel.SetLoginButton();
         }
     }

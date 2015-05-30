@@ -33,8 +33,8 @@ namespace FotografApp.Model
                                 {
                                     if (email.Length < 51)
                                     {
-                                        var userToBeAdded = new User(name, password, email, tlf);
-                                        DatabasePersistencyHandler.Instance.AddUser(userToBeAdded);
+                                        //var userToBeAdded = new User(name, password, email, tlf);
+                                        //DatabasePersistencyHandler.Instance.AddUser(userToBeAdded);
                                     }
                                     else
                                     {

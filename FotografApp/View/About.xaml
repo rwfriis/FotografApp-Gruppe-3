@@ -39,10 +39,10 @@
         <Flyout x:Key="LoginAppFlyOut">
             <Grid Height="135" Width="100">
                 <StackPanel HorizontalAlignment="Left" Height="93" VerticalAlignment="Top" Width="140" Margin="-20,-17,-20,0">
-                    <TextBlock x:Name="LEmail" TextWrapping="Wrap" Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="12"/>
-                    <TextBox x:Name="LEmailSource" TextWrapping="Wrap"/>
-                    <TextBlock x:Name="LPassword" TextWrapping="Wrap" Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="12"/>
-                    <PasswordBox x:Name="LPasswordSource"/>
+                    <TextBlock x:Name="LEmail" TextWrapping="Wrap" Text="Email" FontSize="12"/>
+                    <TextBox x:Name="LEmailSource" TextWrapping="Wrap" PlaceholderText="Email" Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock x:Name="LPassword" TextWrapping="Wrap" Text="Password" FontSize="12"/>
+                    <TextBox x:Name="LPasswordSource" TextWrapping="Wrap" PlaceholderText="Password" Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Left" Height="76" VerticalAlignment="Top" Width="140" Margin="-20,76,-20,-16">
                     <AppBarButton x:Name="LoginAppButton2" HorizontalAlignment="Stretch" Icon="Accept" Label="Login" VerticalAlignment="Stretch" FontSize="12" Command="{Binding LoginCommand}"/>
@@ -59,7 +59,7 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Orientation="Horizontal"/>
                 <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
-                    <AppBarButton x:Name="RegisterAppButton" HorizontalAlignment="Stretch" Icon="AddFriend" Label="Register" VerticalAlignment="Stretch" Flyout="{StaticResource RegisterAppFlyOut}"/>
+                    <AppBarButton x:Name="RegisterAppButton" HorizontalAlignment="Stretch" Visibility="{Binding VisibleLogin}" Icon="AddFriend" Label="Register" VerticalAlignment="Stretch" Flyout="{StaticResource RegisterAppFlyOut}"/>
                     <AppBarButton x:Name="LoginAppbutton" HorizontalAlignment="Stretch" Visibility="{Binding VisibleLogin}" Icon="Contact" Label="Login" VerticalAlignment="Stretch" Flyout="{StaticResource LoginAppFlyOut}"/>
                     <AppBarButton x:Name="LogoutAppbutton" Visibility="{Binding VisibleLogout}" HorizontalAlignment="Stretch" Icon="Contact" Label="Logout" VerticalAlignment="Stretch" Command="{Binding LogoutCommand}"/>
                 </StackPanel>

@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WS", "WS\WS.csproj", "{34048144-F8EE-4C8F-83D5-EC49173C9271}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSCC", "WSCC\WSCC.csproj", "{CDDB70C1-F01C-4E8F-B3D0-FB08514D4287}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FotografApp", "FotografApp\FotografApp.csproj", "{DF038D4F-AFE8-4165-93D2-3625E7A41583}"
@@ -29,20 +27,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{34048144-F8EE-4C8F-83D5-EC49173C9271}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{34048144-F8EE-4C8F-83D5-EC49173C9271}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{34048144-F8EE-4C8F-83D5-EC49173C9271}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{34048144-F8EE-4C8F-83D5-EC49173C9271}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{34048144-F8EE-4C8F-83D5-EC49173C9271}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{34048144-F8EE-4C8F-83D5-EC49173C9271}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{34048144-F8EE-4C8F-83D5-EC49173C9271}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{34048144-F8EE-4C8F-83D5-EC49173C9271}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{34048144-F8EE-4C8F-83D5-EC49173C9271}.Release|Any CPU.Build.0 = Release|Any CPU
-		{34048144-F8EE-4C8F-83D5-EC49173C9271}.Release|ARM.ActiveCfg = Release|Any CPU
-		{34048144-F8EE-4C8F-83D5-EC49173C9271}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{34048144-F8EE-4C8F-83D5-EC49173C9271}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{34048144-F8EE-4C8F-83D5-EC49173C9271}.Release|x64.ActiveCfg = Release|Any CPU
-		{34048144-F8EE-4C8F-83D5-EC49173C9271}.Release|x86.ActiveCfg = Release|Any CPU
 		{CDDB70C1-F01C-4E8F-B3D0-FB08514D4287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CDDB70C1-F01C-4E8F-B3D0-FB08514D4287}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDDB70C1-F01C-4E8F-B3D0-FB08514D4287}.Debug|ARM.ActiveCfg = Debug|Any CPU
