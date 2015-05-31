@@ -1,13 +1,13 @@
 ﻿<Page
-    x:Name="pageRoot"
-    x:Class="FotografApp.View.Order"
-    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:FotografApp.View"
     xmlns:common="using:FotografApp.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModel="using:FotografApp.ViewModel"
+    x:Name="pageRoot"
+    x:Class="FotografApp.View.Order"
     mc:Ignorable="d">
     <Page.Resources>
         <MenuFlyout x:Key="FlyoutBase1"/>
@@ -82,6 +82,10 @@
         </AppBar>
     </Page.BottomAppBar>
 
+    <Page.DataContext>
+        <ViewModel:MainViewModel/>
+    </Page.DataContext>
+
     <!--
         This grid acts as a root panel for the page that defines two rows:
         * Row 0 contains the back button and page title
@@ -138,11 +142,11 @@
                 <Button x:Name="BestilButton" Content="BESTIL" HorizontalAlignment="Left" Margin="900,-2,0,-4" VerticalAlignment="Top" Height="146" Width="150" Background="{x:Null}" BorderThickness="0,0,2,0"/>
                 <TextBlock x:Name="MainLoginInfo" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Login info*" VerticalAlignment="Top" Height="18" Width="163" Margin="1100,67,0,0" Foreground="#FF640000"/>
                 <TextBlock x:Name="MainName" HorizontalAlignment="Left" Margin="162,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="84" FontSize="36" FontWeight="Bold" TextAlignment="Center" Foreground="#FF979797">
-            		<Run Text="Rolf"/>
-            		<Run Text=" "/>
+					<Run Text="Rolf"/>
+					<Run Text=" "/>
                 </TextBlock>
                 <TextBlock x:Name="MainName2" HorizontalAlignment="Left" Margin="246,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="169" FontSize="36" FontWeight="Bold" TextAlignment="Center" Foreground="#FF640000">
-            		<Run Text="Windfeld"/>
+					<Run Text="Windfeld"/>
                 </TextBlock>
             </Grid>
             <Grid x:Name="LinksGrid" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="1373" Margin="-1,592,-1,-1">
@@ -166,13 +170,13 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton" Margin="39,59,39,0" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
-                        Style="{StaticResource NavigationBackButtonNormalStyle}"
-                        VerticalAlignment="Top"
-                        AutomationProperties.Name="Back"
-                        AutomationProperties.AutomationId="BackButton"
-                        AutomationProperties.ItemType="Navigation Button"/>
+				Style="{StaticResource NavigationBackButtonNormalStyle}"
+				VerticalAlignment="Top"
+				AutomationProperties.Name="Back"
+				AutomationProperties.AutomationId="BackButton"
+				AutomationProperties.ItemType="Navigation Button"/>
             <TextBlock x:Name="pageTitle" Text="BESTIL" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
-                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40" Foreground="#FF640000"/>
+				IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40" Foreground="#FF640000"/>
         </Grid>
     </Grid>
 </Page>

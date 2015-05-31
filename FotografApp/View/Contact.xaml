@@ -6,9 +6,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Maps="using:Bing.Maps"
+    xmlns:ViewModel="using:FotografApp.ViewModel"
     x:Name="pageRoot"
     x:Class="FotografApp.View.Contact"
-    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Mode=Self}}"
     mc:Ignorable="d">
     <Page.Resources>
         <MenuFlyout x:Key="GalleryFlyoutBase">
@@ -82,6 +82,10 @@
         </AppBar>
     </Page.BottomAppBar>
 
+    <Page.DataContext>
+        <ViewModel:MainViewModel/>
+    </Page.DataContext>
+
     <!--
         This grid acts as a root panel for the page that defines two rows:
         * Row 0 contains the back button and page title
@@ -109,16 +113,7 @@
                 </Image.Projection>
             </Image>
             <Rectangle Fill="Black" HorizontalAlignment="Left" Height="631" Stroke="Black" VerticalAlignment="Top" Width="1373" Opacity="0.5" Margin="-1,0"/>
-            <Maps:Map HorizontalAlignment="Left" Margin="28,49,0,0" VerticalAlignment="Top" Height="336" Width="446" ZoomLevel="8" Credentials="AnEm1Ok0xeluqP2tckqSlyW6tqhnD-FKhMKIST2weH8yzn4JnFi8vlQrjhnR315N">
-                <Maps:Pushpin>
-                    <Maps:MapLayer.Position>
-                        <Maps:Location Latitude="55.669380" Longitude="11.768180" />
-                    </Maps:MapLayer.Position>
-                </Maps:Pushpin>
-                <Maps:Map.Center>
-                    <Maps:Location Latitude="55.669380" Longitude="11.768180" />
-                </Maps:Map.Center>
-            </Maps:Map>
+
             <TextBox x:Name="Name1" HorizontalAlignment="Left" Margin="894,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="446" Height="35"/>
             <TextBox x:Name="Email1" HorizontalAlignment="Left" Margin="894,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="446" Height="34"/>
             <TextBox x:Name="Phone1" HorizontalAlignment="Left" Margin="894,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="446" Height="35"/>
@@ -145,11 +140,11 @@
                 <Button x:Name="BestilButton" Content="BESTIL" HorizontalAlignment="Left" Margin="900,-2,0,-4" VerticalAlignment="Top" Height="146" Width="150" Background="{x:Null}" BorderThickness="0,0,2,0" Click="BestilAtContact"/>
                 <TextBlock x:Name="MainLoginInfo" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Login info*" VerticalAlignment="Top" Height="18" Width="163" Margin="1100,67,0,0" Foreground="#FF640000"/>
                 <TextBlock x:Name="MainName" HorizontalAlignment="Left" Margin="162,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="84" FontSize="36" FontWeight="Bold" TextAlignment="Center" Foreground="#FF979797">
-            		<Run Text="Rolf"/>
-            		<Run Text=" "/>
+					<Run Text="Rolf"/>
+					<Run Text=" "/>
                 </TextBlock>
                 <TextBlock x:Name="MainName2" HorizontalAlignment="Left" Margin="246,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="169" FontSize="36" FontWeight="Bold" TextAlignment="Center" Foreground="#FF640000">
-            		<Run Text="Windfeld"/>
+					<Run Text="Windfeld"/>
                 </TextBlock>
             </Grid>
             <Grid x:Name="LinksGrid" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="1373" Margin="-1,592,-1,-1">
