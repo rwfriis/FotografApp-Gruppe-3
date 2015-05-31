@@ -18,7 +18,7 @@
             <MenuFlyoutItem x:Name="KreativtFlyOut" Text="Kreativt"/>
         </MenuFlyout>
         <Flyout x:Key="RegisterAppFlyOut">
-            <Grid Height="273" Width="100">
+            <Grid Height="289" Width="100">
                 <StackPanel HorizontalAlignment="Left" Height="233" VerticalAlignment="Top" Width="140" Margin="-20,-17,-20,0">
                     <TextBlock x:Name="Navn" TextWrapping="Wrap" Text="Navn:" FontSize="12"/>
                     <TextBox x:Name="NavnSource" TextWrapping="Wrap" FontSize="12" Height="18"/>
@@ -31,7 +31,8 @@
                     <TextBlock x:Name="Telefon" TextWrapping="Wrap" Text="Telefon:" FontSize="12"/>
                     <TextBox x:Name="TelefonSource" TextWrapping="Wrap" FontSize="12"/>
                 </StackPanel>
-                <StackPanel HorizontalAlignment="Left" Height="77" VerticalAlignment="Top" Width="140" Margin="-20,216,-20,-20">
+                <StackPanel HorizontalAlignment="Left" Height="90" VerticalAlignment="Top" Width="140" Margin="-20,216,-20,-20">
+                    <TextBlock x:Name="RegisterStatus" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" FontSize="12" Text="Du har ikke registreret" Foreground="Red" TextAlignment="Center"/>
                     <AppBarButton x:Name="RegisterAppButton2" HorizontalAlignment="Stretch" Icon="Add" Label="Register" VerticalAlignment="Stretch"/>
                 </StackPanel>
             </Grid>
@@ -60,7 +61,7 @@
                 <StackPanel Orientation="Horizontal"/>
                 <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
                     <AppBarButton x:Name="RegisterAppButton" HorizontalAlignment="Stretch" Icon="AddFriend" Label="Register" VerticalAlignment="Stretch" Flyout="{StaticResource RegisterAppFlyOut}"/>
-                    <AppBarButton x:Name="LoginAppbutton" HorizontalAlignment="Stretch" Icon="Contact" Label="AppBarButton" VerticalAlignment="Stretch" Flyout="{StaticResource LoginAppFlyOut}"/>
+                    <AppBarButton x:Name="LoginAppbutton" HorizontalAlignment="Stretch" Icon="Contact" Label="Login" VerticalAlignment="Stretch" Flyout="{StaticResource LoginAppFlyOut}"/>
                 </StackPanel>
             </Grid>
         </AppBar>
