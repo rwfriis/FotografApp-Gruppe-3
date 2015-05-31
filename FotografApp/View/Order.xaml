@@ -150,9 +150,6 @@
                 </TextBlock>
             </Grid>
             <Grid x:Name="LinksGrid" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="1373" Margin="-1,592,-1,-1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
                 <Grid.Background>
                     <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Bagkilde.png"/>
                 </Grid.Background>
