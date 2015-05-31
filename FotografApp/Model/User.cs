@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FotografApp.Persistency;
 using FotografApp.ViewModel;
+using Newtonsoft.Json;
 
 namespace FotografApp.Model
 {
@@ -17,13 +18,23 @@ namespace FotografApp.Model
         public int TypeOfUser { get; set; }
         public int Id { get; set; }
 
-        public User(string email, string name, string tlf, string password, int type, int id)
+        public User(string name, string password, string email, string tlf)
         {
             Name = name;
             Password = password;
             Email = email;
             Tlf = tlf;
-            TypeOfUser = type;
+            TypeOfUser = 0;
+        }
+
+        [JsonConstructor]
+        public User(string name, string password, string email, string tlf, int typeOfUser, int id)
+        {
+            Name = name;
+            Password = password;
+            Email = email;
+            Tlf = tlf;
+            TypeOfUser = typeOfUser;
             Id = id;
         }
 

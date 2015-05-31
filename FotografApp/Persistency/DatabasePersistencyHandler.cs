@@ -51,7 +51,7 @@ namespace FotografApp.Persistency
                     var users = JsonConvert.DeserializeObject<List<User>>(json);
                     foreach (var user in users.Where(user => user.Password == password && user.Email == email))
                     {
-                        return null;
+                        return user;
                     }
                 }
             }

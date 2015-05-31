@@ -10,7 +10,7 @@ namespace Webservice
     {
         public Users()
         {
-            Orders = new HashSet<Orders>();
+            //Orders = new HashSet<Orders>();
         }
 
         [Required]
@@ -33,8 +33,8 @@ namespace Webservice
 
         public int Id { get; set; }
 
-        public virtual ICollection<Orders> Orders { get; set; }
+        //public virtual ICollection<Orders> Orders { get; set; }
 
-        public virtual TypeOfUser TypeOfUser { get; set; }
+        //public virtual TypeOfUser TypeOfUser { get; set; }
     }
 }

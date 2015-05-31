@@ -118,15 +118,5 @@ namespace FotografApp.View
         {
             Application.Current.Exit();
         }
-
-        private void RegisterButton(object sender, RoutedEventArgs e)
-        {
-            Register.ValidateRegistration(NavnSource.Text, PasswordSource.Password, CPasswordSource.Password, E_mailSource.Text, TelefonSource.Text);
-        }
-
-        private void LoginButton(object sender, RoutedEventArgs e)
-        {
-            Login.LoginAsUser(LEmailSource.Text, LPasswordSource.Password);
-        }
     }
 }

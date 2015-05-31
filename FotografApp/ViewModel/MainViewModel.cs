@@ -27,6 +27,12 @@ namespace FotografApp.ViewModel
         public UserHandler UserHandler { get; set; }
         public static string Email { get; set; }
         public static string Password { get; set; }
+        public static string RName { get; set; }
+        public static string REmail { get; set; }
+        public static string RPassword { get; set; }
+        public static string RCPassword { get; set; }
+        public static string RTlf { get; set; }
+
        
         public MainViewModel()
         {
@@ -46,8 +52,6 @@ namespace FotografApp.ViewModel
             set { _logout = value; OnPropertyChanged(); }
         }
 
-        
-
         public ICommand CreateUserCommand
         {
             get { return _createUserCommand ?? (_createUserCommand = new RelayCommand(UserHandler.CreateUser)); }
@@ -62,8 +66,8 @@ namespace FotografApp.ViewModel
 
         public ICommand LogoutCommand
         {
-            get { return _logoutCommand ?? (_logoutCommand = new RelayCommand(UserHandler.LoginUser)); }
-            set { _loginCommand = value; }
+            get { return _logoutCommand ?? (_logoutCommand = new RelayCommand(UserHandler.LogoutUser)); }
+            set { _logoutCommand = value; }
         }
 
         public void SetLoginButton()
@@ -78,6 +82,8 @@ namespace FotografApp.ViewModel
                 VisibleLogout = "Collapsed";
                 VisibleLogin = "Visible";
             }
+            Email = "";
+            Password = "";
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -28,22 +28,17 @@ namespace Webservice
                 .HasForeignKey(e => e.CategoryId)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<TypeOfUser>()
-                .HasMany(e => e.Users)
-                .WithRequired(e => e.TypeOfUser)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<TypesOfPhotograph>()
                 .HasMany(e => e.Orders)
                 .WithRequired(e => e.TypesOfPhotograph)
                 .HasForeignKey(e => e.TypeOfId)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Users>()
-                .HasMany(e => e.Orders)
-                .WithRequired(e => e.Users)
-                .HasForeignKey(e => e.UserId)
-                .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<Users>()
+            //    .HasMany(e => e.Orders)
+            //    .WithRequired(e => e.Users)
+            //    .HasForeignKey(e => e.UserId)
+            //    .WillCascadeOnDelete(false);
         }
     }
 }

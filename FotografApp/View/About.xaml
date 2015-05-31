@@ -21,15 +21,15 @@
             <Grid Height="273" Width="100">
                 <StackPanel HorizontalAlignment="Left" Height="233" VerticalAlignment="Top" Width="140" Margin="-20,-17,-20,0">
                     <TextBlock x:Name="Navn" TextWrapping="Wrap" Text="Navn:" FontSize="12"/>
-                    <TextBox x:Name="NavnSource" TextWrapping="Wrap" FontSize="12" Height="18"/>
+                    <TextBox x:Name="NavnSource" Text="{Binding RName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" FontSize="12" Height="18"/>
                     <TextBlock x:Name="Password" TextWrapping="Wrap" Text="Password:" FontSize="12"/>
-                    <PasswordBox x:Name="PasswordSource" FontSize="12"/>
+                    <PasswordBox x:Name="PasswordSource" Password="{Binding RPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="12"/>
                     <TextBlock x:Name="Confirm_Password" TextWrapping="Wrap" Text="Confirm Password:" FontSize="12"/>
-                    <PasswordBox x:Name="CPasswordSource" FontSize="12"/>
+                    <PasswordBox x:Name="CPasswordSource" Password="{Binding RCPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="12"/>
                     <TextBlock x:Name="E_mail" TextWrapping="Wrap" Text="E-mail:" FontSize="12"/>
-                    <TextBox x:Name="E_mailSource" TextWrapping="Wrap" FontSize="12"/>
+                    <TextBox x:Name="E_mailSource" Text="{Binding REmail, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" FontSize="12"/>
                     <TextBlock x:Name="Telefon" TextWrapping="Wrap" Text="Telefon:" FontSize="12"/>
-                    <TextBox x:Name="TelefonSource" TextWrapping="Wrap" FontSize="12"/>
+                    <TextBox x:Name="TelefonSource" Text="{Binding RTlf, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" FontSize="12"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Left" Height="77" VerticalAlignment="Top" Width="140" Margin="-20,216,-20,-20">
                     <AppBarButton x:Name="RegisterAppButton2" HorizontalAlignment="Stretch" Icon="Add" Label="Register" VerticalAlignment="Stretch" Command="{Binding CreateUserCommand}"/>

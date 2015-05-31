@@ -29,42 +29,6 @@ namespace FotografApp.Model
             {
                 Singleton.Instance.CurrentUser = user;
             }
-            //List<User> user = DatabasePersistencyHandler.Instance.GetUsers();
-            //bool exist = false;
-            //bool passwordIsTrue = false;
-
-            //PasswordIsWrong = true;
-            //UserDoesNotExist = true;
-
-            //foreach (var users in user)
-            //{
-            //    if (users.Email.Equals(email))
-            //    {
-            //        exist = true;
-            //        if (users.Password.Equals(password))
-            //            passwordIsTrue = true;
-            //    }
-            //}
-
-            //if (exist == true)
-            //{
-            //    if (passwordIsTrue == true)
-            //    {
-            //        _isLoggedIn = true;
-            //        PasswordIsWrong = false;
-            //        UserDoesNotExist = false;
-
-            //        //User Singleton her
-            //    }
-            //    else
-            //    {
-            //        PasswordIsWrong = true;
-            //    }
-            //}
-            //else
-            //{
-            //    UserDoesNotExist = true;
-            //}
         }
     }
 }
