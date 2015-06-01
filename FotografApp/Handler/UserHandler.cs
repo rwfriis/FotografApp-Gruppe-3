@@ -20,7 +20,7 @@ namespace FotografApp.Handler
         }
         public void CreateUser()
         {
-            Register.ValidateRegistration(MainViewModel.RName, MainViewModel.RPassword, MainViewModel.RCPassword, MainViewModel.REmail, MainViewModel.RTlf);
+            Register.ValidateUserRegistration(MainViewModel.RName, MainViewModel.RPassword, MainViewModel.RCPassword, MainViewModel.REmail, MainViewModel.RTlf);
         }
 
         public void LogoutUser()

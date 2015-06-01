@@ -115,18 +115,18 @@
                 </Image.Projection>
             </Image>
             <Rectangle Fill="Black" HorizontalAlignment="Left" Height="600" Stroke="Black" VerticalAlignment="Top" Width="1371" Opacity="0.5"/>
-            <DatePicker HorizontalAlignment="Left" Margin="36,168,0,0" VerticalAlignment="Top"/>
+            <DatePicker Date="{Binding MDateTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="36,168,0,0" VerticalAlignment="Top"/>
             <CheckBox x:Name="CheckPortræt" Content="Portræt" HorizontalAlignment="Left" Margin="137,229,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="NavnSource" HorizontalAlignment="Left" Margin="1119,113,0,0" TextWrapping="Wrap" Text="auto" VerticalAlignment="Top"/>
             <TextBox x:Name="TelefonSource" HorizontalAlignment="Left" Margin="1119,168,0,0" TextWrapping="Wrap" Text="auto" VerticalAlignment="Top"/>
             <TextBox x:Name="EmailSource" HorizontalAlignment="Left" Margin="1119,224,0,0" TextWrapping="Wrap" Text="auto" VerticalAlignment="Top"/>
             <TextBlock x:Name="Navn" HorizontalAlignment="Left" Margin="971,132,0,0" TextWrapping="Wrap" Text="Navn:" VerticalAlignment="Top"/>
-            <TextBox x:Name="AdresseSource" HorizontalAlignment="Left" Margin="1119,280,0,0" TextWrapping="Wrap" Text="auto" VerticalAlignment="Top"/>
+            <TextBox x:Name="AdresseSource" HorizontalAlignment="Left" Margin="1119,280,0,0" TextWrapping="Wrap" Text="{Binding MAddress, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
             <TextBlock x:Name="Telefon" HorizontalAlignment="Left" Margin="971,187,0,0" TextWrapping="Wrap" Text="Telefon" VerticalAlignment="Top"/>
             <TextBlock x:Name="Email" HorizontalAlignment="Left" Margin="971,243,0,0" TextWrapping="Wrap" Text="E-mail:" VerticalAlignment="Top"/>
             <TextBlock x:Name="Adresse" HorizontalAlignment="Left" Margin="971,299,0,0" TextWrapping="Wrap" Text="Adresse:" VerticalAlignment="Top"/>
             <TextBlock x:Name="Price" HorizontalAlignment="Left" Margin="36,302,0,0" TextWrapping="Wrap" Text="Pris i kr:" VerticalAlignment="Top"/>
-            <TextBlock x:Name="PriceSource" HorizontalAlignment="Left" Margin="140,305,0,0" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top"/>
+            <TextBlock x:Name="PriceSource" HorizontalAlignment="Left" Margin="140,305,0,0" TextWrapping="Wrap" Text="{Binding MPrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
             <Button x:Name="Kategori" Content="Kategori" HorizontalAlignment="Left" Margin="137,117,0,0" VerticalAlignment="Top" Flyout="{StaticResource FlyoutBase1}"/>
             <TextBlock HorizontalAlignment="Left" Margin="36,132,0,0" TextWrapping="Wrap" Text="Type af billede:" VerticalAlignment="Top"/>
             <Grid x:Name="MainNavigationGrid" HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="1372" Margin="0,451,-1,0">

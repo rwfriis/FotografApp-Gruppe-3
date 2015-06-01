@@ -11,6 +11,7 @@ using Windows.UI.Xaml.Controls;
 using FotografApp.Annotations;
 using FotografApp.Common;
 using FotografApp.Handler;
+using FotografApp.Model;
 
 namespace FotografApp.ViewModel
 {
@@ -32,8 +33,13 @@ namespace FotografApp.ViewModel
         public static string RPassword { get; set; }
         public static string RCPassword { get; set; }
         public static string RTlf { get; set; }
+        public static string MAddress { get; set; }
+        public static DateTime MDateTime { get; set; }
+        public static string MType { get; set; }
+        public static int MPortraits { get; set; }
+        public static int MPrice { get; set; }
+        public static string MName { get; set; }
 
-       
         public MainViewModel()
         {
             UserHandler = new UserHandler(this);

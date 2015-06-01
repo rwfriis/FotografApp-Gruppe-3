@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FotografApp.Model;
 using FotografApp.Persistency;
 using FotografApp.View;
 using FotografApp.ViewModel;
@@ -20,7 +21,7 @@ namespace FotografApp.Handler
 
         public void CreateOrder()
         {
-            DatabasePersistencyHandler.Instance.AddOrder(null);
+            //Register.ValidateOrderRegistration(Singleton.Instance.CurrentUser, , MainViewModel.MDateTime);
         }
 
         public void DeleteOrder()

@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FotografApp.Persistency;
+using FotografApp.View;
+using FotografApp.ViewModel;
 
 namespace FotografApp.Model
 {
     class Register
     {
-        public static void ValidateRegistration(string name, string password, string confirmPassword, string email, string tlf)
+        public static void ValidateUserRegistration(string name, string password, string confirmPassword, string email, string tlf)
         {
             List<User> user = DatabasePersistencyHandler.Instance.GetUsers();
             bool exist = false;
@@ -69,6 +71,13 @@ namespace FotografApp.Model
             {
                 //Please fill all information boxes.
             }
+        }
+
+
+        public static void ValidateOrderRegistration(User user, string address, DateTime dateTime, string type, int portraits, int price)
+        {
+            var orderToBeAdded = new Orders(user, address, dateTime, type, portraits, price);
+            DatabasePersistencyHandler.Instance.AddOrder(orderToBeAdded);
         }
     }
 }
