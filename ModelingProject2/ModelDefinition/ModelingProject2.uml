@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="a07c2fb6-6dd2-4ab6-a70a-8fd1b97dc645"
   name="ModelingProject2" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -1577,6 +1577,45 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="6fa998e7-ab5d-43b5-82be-672d17629ca3"
+            isDerived="false"
+            sourceEndRoleName="Administrator"
+            targetEndRoleName="LogOut"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="c42fd7d1-adf3-46e3-b4c5-f84e4c0c702d"
+              LastKnownName="LogOut"
+              LastKnownLocation="ModelingProject2.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0788e922-d429-4f39-8965-56b41cc52beb"
+                  name="Administrator"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5a8f8978-c0cf-47c5-b467-5093a839c51a"
+                  name="LogOut"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
       </useCase>
     </packageHasNamedElement>
@@ -1694,6 +1733,45 @@
                 <memberEnd
                   Id="a84caad6-fdd9-45b1-bbc1-3acbd7eae797"
                   name="Ordering of product"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="580c16cf-b636-415d-b050-99c36f68ccc5"
+            isDerived="false"
+            sourceEndRoleName="User"
+            targetEndRoleName="LogOut"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="c42fd7d1-adf3-46e3-b4c5-f84e4c0c702d"
+              LastKnownName="LogOut"
+              LastKnownLocation="ModelingProject2.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3737fde4-32e1-44b5-bb6e-1e6ca0434cc2"
+                  name="User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="159c19f2-d581-48b1-b3e5-31281867de20"
+                  name="LogOut"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -2317,6 +2395,13 @@
         Id="f0a532ee-1799-4e6c-929d-8adacb887c21"
         LastKnownName="Persistency"
         LastKnownLocation="Package_1213.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c42fd7d1-adf3-46e3-b4c5-f84e4c0c702d"
+        name="LogOut"
+        isAbstract="false"
+        isLeaf="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

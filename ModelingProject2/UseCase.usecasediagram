@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm11="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="95132c93-45d4-4a7a-a7fc-7cc8f72bcbd6" name="UMLUseCaseDiagram2" linkedPackageId="20cab60b-d7b9-45d7-a49c-7b23a1ad1735" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="95132c93-45d4-4a7a-a7fc-7cc8f72bcbd6" name="UMLUseCaseDiagram2" linkedPackageId="20cab60b-d7b9-45d7-a49c-7b23a1ad1735" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <packagedElements>
     <useCaseModelRootHasTypes>
       <actor Id="ca42b43b-0fc9-4a38-90ce-88a85a97a8cf" name="Guest" isAbstract="false" isLeaf="false">
@@ -163,6 +163,22 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="a417c450-d57b-493d-817f-c594994bd371" />
           </association>
+          <association Id="b0956a65-d882-4fdf-b21e-fdd5e9259656" isDerived="false" sourceEndRoleName="Administrator" targetEndRoleName="LogOut" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="f550c6c6-5a27-4d31-a9b1-57f1f01d98e3" LastKnownName="LogOut" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2177218c-b520-47c4-8a78-07ff647acd69" name="Administrator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0788e922-d429-4f39-8965-56b41cc52beb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a5ed27f3-9828-4462-8663-236ea33ca4c6" name="LogOut" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="5a8f8978-c0cf-47c5-b467-5093a839c51a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="6fa998e7-ab5d-43b5-82be-672d17629ca3" />
+          </association>
         </targetEnds>
       </useCase>
     </useCaseModelRootHasTypes>
@@ -218,6 +234,22 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="479bee93-c7f5-4227-90de-7cbc8aece549" />
           </association>
+          <association Id="655afbbb-c48c-41bd-bad0-0f8918f1abcb" isDerived="false" sourceEndRoleName="User" targetEndRoleName="LogOut" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="f550c6c6-5a27-4d31-a9b1-57f1f01d98e3" LastKnownName="LogOut" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="22470196-8265-41e9-a2d6-51526a7eb1c3" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3737fde4-32e1-44b5-bb6e-1e6ca0434cc2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="08346be9-eb32-4cfb-a39f-91275fc28824" name="LogOut" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="159c19f2-d581-48b1-b3e5-31281867de20" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="580c16cf-b636-415d-b050-99c36f68ccc5" />
+          </association>
         </targetEnds>
       </useCase>
     </useCaseModelRootHasTypes>
@@ -249,6 +281,11 @@
     <useCaseModelRootHasTypes>
       <useCase Id="2bc3c955-9bc2-43e1-bb10-72e6b6ce4f83" name="Ordering of product" isAbstract="false" isLeaf="false">
         <elementDefinition Id="6c91739d-bb1c-44e8-bc08-1eb74b20cd75" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="f550c6c6-5a27-4d31-a9b1-57f1f01d98e3" name="LogOut" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c42fd7d1-adf3-46e3-b4c5-f84e4c0c702d" />
       </useCase>
     </useCaseModelRootHasTypes>
   </packagedElements>
