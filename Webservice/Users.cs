@@ -8,11 +8,6 @@ namespace Webservice
 
     public partial class Users
     {
-        public Users()
-        {
-            //Orders = new HashSet<Orders>();
-        }
-
         [Required]
         [StringLength(50)]
         public string Email { get; set; }
@@ -32,9 +27,5 @@ namespace Webservice
         public int TypeOfUserId { get; set; }
 
         public int Id { get; set; }
-
-        //public virtual ICollection<Orders> Orders { get; set; }
-
-        //public virtual TypeOfUser TypeOfUser { get; set; }
     }
 }

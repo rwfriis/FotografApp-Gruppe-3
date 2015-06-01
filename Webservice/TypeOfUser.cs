@@ -9,11 +9,6 @@ namespace Webservice
     [Table("TypeOfUser")]
     public partial class TypeOfUser
     {
-        public TypeOfUser()
-        {
-            Users = new HashSet<Users>();
-        }
-
         public int Id { get; set; }
 
         [Required]
@@ -23,7 +18,5 @@ namespace Webservice
         [Required]
         [StringLength(100)]
         public string Description { get; set; }
-
-        public virtual ICollection<Users> Users { get; set; }
     }
 }

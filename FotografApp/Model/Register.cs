@@ -74,9 +74,9 @@ namespace FotografApp.Model
         }
 
 
-        public static void ValidateOrderRegistration(User user, string address, DateTime dateTime, string type, int portraits, int price)
+        public static void ValidateOrderRegistration(User user, string address, DateTime dateTime, int type, int portraits, int price)
         {
-            var orderToBeAdded = new Orders(user, address, dateTime, type, portraits, price);
+            var orderToBeAdded = new Orders(user.Id, dateTime, portraits, price, type, address);
             DatabasePersistencyHandler.Instance.AddOrder(orderToBeAdded);
         }
     }

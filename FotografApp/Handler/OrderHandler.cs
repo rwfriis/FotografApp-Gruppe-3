@@ -12,16 +12,20 @@ namespace FotografApp.Handler
 {
     class OrderHandler
     {
-        private MainViewModel _viewModel { get; set; }
+        private MainViewModel ViewModel { get; set; }
 
         public OrderHandler(MainViewModel viewModel)
         {
-            _viewModel = viewModel;
+            ViewModel = viewModel;
         }
 
         public void CreateOrder()
         {
-            //Register.ValidateOrderRegistration(Singleton.Instance.CurrentUser, , MainViewModel.MDateTime);
+            if (ViewModel.ValidateOrder())
+            {
+                var date = new DateTime(MainViewModel.MDateTime.Year, MainViewModel.MDateTime.Month, MainViewModel.MDateTime.Day, MainViewModel.MTime.Hour, MainViewModel.MTime.Minute, MainViewModel.MTime.Second);
+                Register.ValidateOrderRegistration(Singleton.Instance.CurrentUser, MainViewModel.MAddress, DateTime.Now, MainViewModel.MType, Convert.ToInt32(MainViewModel.MAntal), 0);
+            }
         }
 
         public void DeleteOrder()

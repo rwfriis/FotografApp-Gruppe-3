@@ -8,9 +8,8 @@ namespace Webservice
     public partial class FotografAppContext : DbContext
     {
         public FotografAppContext()
-            : base("name=FotografAppContext")
+            : base("name=FotografAppContext1")
         {
-            base.Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<Categories> Categories { get; set; }
@@ -27,18 +26,6 @@ namespace Webservice
                 .WithRequired(e => e.Categories)
                 .HasForeignKey(e => e.CategoryId)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<TypesOfPhotograph>()
-                .HasMany(e => e.Orders)
-                .WithRequired(e => e.TypesOfPhotograph)
-                .HasForeignKey(e => e.TypeOfId)
-                .WillCascadeOnDelete(false);
-
-            //modelBuilder.Entity<Users>()
-            //    .HasMany(e => e.Orders)
-            //    .WithRequired(e => e.Users)
-            //    .HasForeignKey(e => e.UserId)
-            //    .WillCascadeOnDelete(false);
         }
     }
 }

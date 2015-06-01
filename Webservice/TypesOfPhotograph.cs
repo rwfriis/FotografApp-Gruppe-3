@@ -9,11 +9,6 @@ namespace Webservice
     [Table("TypesOfPhotograph")]
     public partial class TypesOfPhotograph
     {
-        public TypesOfPhotograph()
-        {
-            Orders = new HashSet<Orders>();
-        }
-
         [Required]
         [StringLength(10)]
         public string Name { get; set; }
@@ -22,8 +17,7 @@ namespace Webservice
         [StringLength(200)]
         public string Description { get; set; }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
-
-        public virtual ICollection<Orders> Orders { get; set; }
     }
 }

@@ -15,7 +15,7 @@ namespace FotografApp.Model
         public string Password { get; set; }
         public string Email { get; set; }
         public string Tlf { get; set; }
-        public int TypeOfUser { get; set; }
+        public int TypeOfUserId { get; set; }
         public int Id { get; set; }
 
         public User(string name, string password, string email, string tlf)
@@ -24,7 +24,7 @@ namespace FotografApp.Model
             Password = password;
             Email = email;
             Tlf = tlf;
-            TypeOfUser = 0;
+            TypeOfUserId = 0;
         }
 
         [JsonConstructor]
@@ -34,7 +34,7 @@ namespace FotografApp.Model
             Password = password;
             Email = email;
             Tlf = tlf;
-            TypeOfUser = typeOfUser;
+            TypeOfUserId = typeOfUser;
             Id = id;
         }
 

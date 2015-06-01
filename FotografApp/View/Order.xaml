@@ -79,8 +79,8 @@
                     <AppBarButton x:Name="ExitAppButton" HorizontalAlignment="Stretch" Icon="Cancel" Label="Exit" VerticalAlignment="Stretch" Margin="0,0,0,-0.143" Click="ExitAppAtOrder"/>
                 </StackPanel>
                 <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
-                    <AppBarButton x:Name="DeleteOrderAppButton" HorizontalAlignment="Stretch" Icon="Delete" Label="Slet bestilling" VerticalAlignment="Stretch"/>
-                    <AppBarButton x:Name="SendOrderAppButton" HorizontalAlignment="Stretch" Icon="Add" Label="Send bestilling" VerticalAlignment="Stretch"/>
+                    <AppBarButton x:Name="DeleteOrderAppButton" HorizontalAlignment="Stretch" Icon="Delete" Label="Slet bestilling" VerticalAlignment="Stretch" Visibility="{Binding VisibleLogout}"/>
+                    <AppBarButton x:Name="SendOrderAppButton" HorizontalAlignment="Stretch" Icon="Add" Label="Send bestilling" VerticalAlignment="Stretch" Command="{Binding CreateOrderCommand}" Visibility="{Binding VisibleLogout}"/>
                 </StackPanel>
             </Grid>
         </AppBar>
@@ -119,9 +119,9 @@
                 </Image.Projection>
             </Image>
             <Rectangle Fill="Black" HorizontalAlignment="Left" Height="600" Stroke="Black" VerticalAlignment="Top" Width="1371" Opacity="0.5"/>
-            <DatePicker Date="{Binding MDateTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="136,168,0,0" VerticalAlignment="Top"/>
-            <TextBlock x:Name="Price" HorizontalAlignment="Left" Margin="36,302,0,0" TextWrapping="Wrap" Text="Pris i kr:" VerticalAlignment="Top"/>
-            <TextBlock x:Name="PriceSource" HorizontalAlignment="Left" Margin="140,305,0,0" TextWrapping="Wrap" Text="{Binding MPrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
+            <DatePicker Date="{Binding MDateTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Margin="136,168,0,0" VerticalAlignment="Top" DayVisible="True" YearVisible="True" IsTabStop="False"/>
+            <TextBlock x:Name="Price" HorizontalAlignment="Left" Margin="36,350,0,0" TextWrapping="Wrap" Text="Pris i kr:" VerticalAlignment="Top"/>
+            <TextBlock x:Name="PriceSource" HorizontalAlignment="Left" Margin="140,350,0,0" TextWrapping="Wrap" Text="{Binding MPrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
             <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="136,117,0,0" SelectedIndex="{Binding MType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                 <ComboBoxItem Content="Arkitektur" />
                 <ComboBoxItem Content="Bryllup" />
@@ -129,12 +129,14 @@
                 <ComboBoxItem Content="Natur" />
                 <ComboBoxItem Content="Portræt" />
             </ComboBox>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Tid:" VerticalAlignment="Top" Margin="36,230,0,0"/>
+            <TimePicker HorizontalAlignment="Left" VerticalAlignment="Top" Margin="136,220,0,0" Time="{Binding MTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" Margin="336,117,0,0" Visibility="{Binding TypeVisibility}" Text="{Binding MAntal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Dato:" VerticalAlignment="Top" Margin="36,179,0,0"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Dato:" VerticalAlignment="Top" Margin="36,180,0,0"/>
             <TextBlock HorizontalAlignment="Left" Margin="36,127,0,0" TextWrapping="Wrap" Text="Type af billede:" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Antal:" VerticalAlignment="Top" Margin="285,127,0,0" Visibility="{Binding TypeVisibility}"/>
-            <TextBox x:Name="AdresseSource" HorizontalAlignment="Left" Width="280" Margin="136,220,0,0" TextWrapping="Wrap" Text="{Binding MAddress, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
-            <TextBlock x:Name="Adresse" HorizontalAlignment="Left" Margin="36,230,0,0" TextWrapping="Wrap" Text="Adresse:" VerticalAlignment="Top"/>
+            <TextBox x:Name="AdresseSource" HorizontalAlignment="Left" Width="280" Margin="136,270,0,0" TextWrapping="Wrap" Text="{Binding MAddress, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
+            <TextBlock x:Name="Adresse" HorizontalAlignment="Left" Margin="36,280,0,0" TextWrapping="Wrap" Text="Adresse:" VerticalAlignment="Top"/>
             <Grid x:Name="MainNavigationGrid" HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="1372" Margin="0,451,-1,0">
                 <Grid.Background>
                     <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/MainBag.png"/>
@@ -166,6 +168,10 @@
                 <Button x:Name="GoogleButton" Content="Google+" HorizontalAlignment="Left" Margin="1248,-3,0,-3" VerticalAlignment="Top" Height="46" BorderThickness="1,0,0,0" FontSize="10" BorderBrush="#FF646464" Foreground="#FF646464"/>
                 <Button x:Name="TwitterButton" Content="twitter" HorizontalAlignment="Left" Margin="1313,-3,-3.286,-3" VerticalAlignment="Top" Height="46" BorderThickness="1,0,0,0" FontSize="10" BorderBrush="#FF646464" Foreground="#FF646464"/>
             </Grid>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding CatErrorText}" VerticalAlignment="Top" Margin="435,127,0,0" Foreground="Red"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding DateErrorText}" VerticalAlignment="Top" Margin="435,180,0,0" Foreground="Red"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding TimeErrorText}" VerticalAlignment="Top" Margin="435,230,0,0" Foreground="Red"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding AddErrorText}" VerticalAlignment="Top" Margin="435,280,0,0" Foreground="Red"/>
 
         </Grid>
 

@@ -10,9 +10,9 @@ namespace Webservice
     {
         public int UserId { get; set; }
 
-        public DateTime DateTime { get; set; }
+        public DateTime Date { get; set; }
 
-        public int? Portraits { get; set; }
+        public int Portraits { get; set; }
 
         public int Price { get; set; }
 
@@ -21,10 +21,7 @@ namespace Webservice
         [Required]
         public string Address { get; set; }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
-
-        public virtual TypesOfPhotograph TypesOfPhotograph { get; set; }
-
-        public virtual Users Users { get; set; }
     }
 }

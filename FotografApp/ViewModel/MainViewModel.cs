@@ -20,11 +20,18 @@ namespace FotografApp.ViewModel
         private ICommand _createUserCommand;
         private ICommand _loginCommand;
         private ICommand _logoutCommand;
+        private ICommand _createOrderCommand;
         
         private string _login = "Visible";
         private string _logout = "Collapsed";
         private string _typeVisibility = "Visible";
         private static int _mType;
+        private static DateTimeOffset _mDateTime = DateTime.Now;
+        private static DateTimeOffset _mTime = DateTime.Now;
+        private string _catErrorText;
+        private string _dateErrorText;
+        private string _timeErrorText;
+        private string _addErrorText;
 
         public OrderHandler OrderHandler { get; set; }
         public UserHandler UserHandler { get; set; }
@@ -36,8 +43,44 @@ namespace FotografApp.ViewModel
         public static string RCPassword { get; set; }
         public static string RTlf { get; set; }
         public static string MAddress { get; set; }
-        public static DateTime MDateTime { get; set; }
+
+        public static DateTimeOffset MDateTime
+        {
+            get { return _mDateTime; }
+            set { _mDateTime = value; }
+        }
+
         public static string MAntal { get; set; }
+
+        public static DateTimeOffset MTime
+        {
+            get { return _mTime; }
+            set { _mTime = value; }
+        }
+
+        public string CatErrorText
+        {
+            get { return _catErrorText; }
+            set { _catErrorText = value; OnPropertyChanged(); }
+        }
+
+        public string DateErrorText
+        {
+            get { return _dateErrorText; }
+            set { _dateErrorText = value; OnPropertyChanged(); }
+        }
+
+        public string TimeErrorText
+        {
+            get { return _timeErrorText; }
+            set { _timeErrorText = value; OnPropertyChanged(); }
+        }
+
+        public string AddErrorText
+        {
+            get { return _addErrorText; }
+            set { _addErrorText = value; OnPropertyChanged(); }
+        }
 
         public string TypeVisibility
         {
@@ -61,6 +104,11 @@ namespace FotografApp.ViewModel
             UserHandler = new UserHandler(this);
             OrderHandler = new OrderHandler(this);
             Singleton.Instance.MainViewModel = this;
+            if (Singleton.Instance.CurrentUser != null)
+            {
+                VisibleLogout = "Visible";
+                VisibleLogin = "Collapsed";
+            }
         }
 
         public string VisibleLogin
@@ -75,6 +123,40 @@ namespace FotografApp.ViewModel
             set { _logout = value; OnPropertyChanged(); }
         }
 
+        public Boolean ValidateOrder()
+        {
+            CatErrorText = "";
+            DateErrorText = "";
+            TimeErrorText = "";
+            AddErrorText = "";
+            var check = true;
+            if (MType == 4)
+            {
+                int number;
+                if (MAntal == "")
+                {
+                    check = false;
+                    CatErrorText = "Giv et antal";
+                }
+                else if (!int.TryParse(MAntal, out number))
+                {
+                    check = false;
+                    CatErrorText = "Skal være et helt tal";
+                }
+            }
+            if (MDateTime.Date <= DateTime.Now)
+            {
+                check = false;
+                DateErrorText = "Vælg en dag efter i dag";
+            }
+            if (MAddress == "")
+            {
+                check = false;
+                AddErrorText = "Skriv din addresse";
+            }
+            return true;
+        }
+
         public static void OrderTypeChange()
         {
             Singleton.Instance.MainViewModel.TypeVisibility = MType == 4 ? "Visible" : "Collapsed";
@@ -84,6 +166,12 @@ namespace FotografApp.ViewModel
         {
             get { return _createUserCommand ?? (_createUserCommand = new RelayCommand(UserHandler.CreateUser)); }
             set { _createUserCommand = value; }
+        }
+
+        public ICommand CreateOrderCommand
+        {
+            get { return _createOrderCommand ?? (_createOrderCommand = new RelayCommand(OrderHandler.CreateOrder)); }
+            set { _createOrderCommand = value; }
         }
 
         public ICommand LoginCommand
