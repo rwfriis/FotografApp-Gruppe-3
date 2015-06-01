@@ -10,7 +10,6 @@
     x:Class="FotografApp.View.Order"
     mc:Ignorable="d">
     <Page.Resources>
-        <MenuFlyout x:Key="FlyoutBase1"/>
         <MenuFlyout x:Key="GalleryFlyoutBase">
             <MenuFlyoutItem x:Name="PortrætFlyOut" Text="Portræt" Click="PortrætAtOrder"/>
             <MenuFlyoutItem x:Name="NaturFlyOut" Text="Natur" Click="NaturAtOrder"/>
@@ -115,20 +114,28 @@
                 </Image.Projection>
             </Image>
             <Rectangle Fill="Black" HorizontalAlignment="Left" Height="600" Stroke="Black" VerticalAlignment="Top" Width="1371" Opacity="0.5"/>
-            <DatePicker Date="{Binding MDateTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="36,168,0,0" VerticalAlignment="Top"/>
-            <CheckBox x:Name="CheckPortræt" Content="Portræt" HorizontalAlignment="Left" Margin="137,229,0,0" VerticalAlignment="Top"/>
+            <DatePicker Date="{Binding MDateTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="136,168,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="NavnSource" HorizontalAlignment="Left" Margin="1119,113,0,0" TextWrapping="Wrap" Text="auto" VerticalAlignment="Top"/>
             <TextBox x:Name="TelefonSource" HorizontalAlignment="Left" Margin="1119,168,0,0" TextWrapping="Wrap" Text="auto" VerticalAlignment="Top"/>
             <TextBox x:Name="EmailSource" HorizontalAlignment="Left" Margin="1119,224,0,0" TextWrapping="Wrap" Text="auto" VerticalAlignment="Top"/>
             <TextBlock x:Name="Navn" HorizontalAlignment="Left" Margin="971,132,0,0" TextWrapping="Wrap" Text="Navn:" VerticalAlignment="Top"/>
-            <TextBox x:Name="AdresseSource" HorizontalAlignment="Left" Margin="1119,280,0,0" TextWrapping="Wrap" Text="{Binding MAddress, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
             <TextBlock x:Name="Telefon" HorizontalAlignment="Left" Margin="971,187,0,0" TextWrapping="Wrap" Text="Telefon" VerticalAlignment="Top"/>
             <TextBlock x:Name="Email" HorizontalAlignment="Left" Margin="971,243,0,0" TextWrapping="Wrap" Text="E-mail:" VerticalAlignment="Top"/>
-            <TextBlock x:Name="Adresse" HorizontalAlignment="Left" Margin="971,299,0,0" TextWrapping="Wrap" Text="Adresse:" VerticalAlignment="Top"/>
             <TextBlock x:Name="Price" HorizontalAlignment="Left" Margin="36,302,0,0" TextWrapping="Wrap" Text="Pris i kr:" VerticalAlignment="Top"/>
             <TextBlock x:Name="PriceSource" HorizontalAlignment="Left" Margin="140,305,0,0" TextWrapping="Wrap" Text="{Binding MPrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
-            <Button x:Name="Kategori" Content="Kategori" HorizontalAlignment="Left" Margin="137,117,0,0" VerticalAlignment="Top" Flyout="{StaticResource FlyoutBase1}"/>
-            <TextBlock HorizontalAlignment="Left" Margin="36,132,0,0" TextWrapping="Wrap" Text="Type af billede:" VerticalAlignment="Top"/>
+            <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="136,117,0,0" SelectedIndex="{Binding MType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                <ComboBoxItem Content="Arkitektur" />
+                <ComboBoxItem Content="Bryllup" />
+                <ComboBoxItem Content="Kreativt" />
+                <ComboBoxItem Content="Natur" />
+                <ComboBoxItem Content="Portræt" />
+            </ComboBox>
+            <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" Margin="336,117,0,0" Visibility="{Binding TypeVisibility}" Text="{Binding MAntal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Dato:" VerticalAlignment="Top" Margin="36,179,0,0"/>
+            <TextBlock HorizontalAlignment="Left" Margin="36,127,0,0" TextWrapping="Wrap" Text="Type af billede:" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Antal:" VerticalAlignment="Top" Margin="285,127,0,0" Visibility="{Binding TypeVisibility}"/>
+            <TextBox x:Name="AdresseSource" HorizontalAlignment="Left" Width="280" Margin="136,220,0,0" TextWrapping="Wrap" Text="{Binding MAddress, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
+            <TextBlock x:Name="Adresse" HorizontalAlignment="Left" Margin="36,230,0,0" TextWrapping="Wrap" Text="Adresse:" VerticalAlignment="Top"/>
             <Grid x:Name="MainNavigationGrid" HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="1372" Margin="0,451,-1,0">
                 <Grid.Background>
                     <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/MainBag.png"/>
@@ -160,6 +167,7 @@
                 <Button x:Name="GoogleButton" Content="Google+" HorizontalAlignment="Left" Margin="1248,-3,0,-3" VerticalAlignment="Top" Height="46" BorderThickness="1,0,0,0" FontSize="10" BorderBrush="#FF646464" Foreground="#FF646464"/>
                 <Button x:Name="TwitterButton" Content="twitter" HorizontalAlignment="Left" Margin="1313,-3,-3.286,-3" VerticalAlignment="Top" Height="46" BorderThickness="1,0,0,0" FontSize="10" BorderBrush="#FF646464" Foreground="#FF646464"/>
             </Grid>
+
         </Grid>
 
         <!-- Back button and page title -->

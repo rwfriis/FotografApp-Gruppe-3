@@ -22,7 +22,6 @@ namespace FotografApp.ViewModel
 
         private Singleton()
         {
-            MainViewModel = new MainViewModel();
         }
     }
 }

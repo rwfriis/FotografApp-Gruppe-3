@@ -23,6 +23,8 @@ namespace FotografApp.ViewModel
         
         private string _login = "Visible";
         private string _logout = "Collapsed";
+        private string _typeVisibility = "Visible";
+        private static int _mType;
 
         public OrderHandler OrderHandler { get; set; }
         public UserHandler UserHandler { get; set; }
@@ -35,7 +37,21 @@ namespace FotografApp.ViewModel
         public static string RTlf { get; set; }
         public static string MAddress { get; set; }
         public static DateTime MDateTime { get; set; }
-        public static string MType { get; set; }
+        public static string MAntal { get; set; }
+
+        public string TypeVisibility
+        {
+            get { return _typeVisibility; }
+            set { _typeVisibility = value; OnPropertyChanged();}
+        }
+
+
+        public static int MType
+        {
+            get { return _mType; }
+            set { _mType = value; OrderTypeChange();}
+        }
+
         public static int MPortraits { get; set; }
         public static int MPrice { get; set; }
         public static string MName { get; set; }
@@ -44,6 +60,7 @@ namespace FotografApp.ViewModel
         {
             UserHandler = new UserHandler(this);
             OrderHandler = new OrderHandler(this);
+            Singleton.Instance.MainViewModel = this;
         }
 
         public string VisibleLogin
@@ -56,6 +73,11 @@ namespace FotografApp.ViewModel
         {
             get { return _logout; }
             set { _logout = value; OnPropertyChanged(); }
+        }
+
+        public static void OrderTypeChange()
+        {
+            Singleton.Instance.MainViewModel.TypeVisibility = MType == 4 ? "Visible" : "Collapsed";
         }
 
         public ICommand CreateUserCommand
