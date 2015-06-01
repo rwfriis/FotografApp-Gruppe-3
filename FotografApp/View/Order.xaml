@@ -78,7 +78,10 @@
                 <StackPanel Orientation="Horizontal">
                     <AppBarButton x:Name="ExitAppButton" HorizontalAlignment="Stretch" Icon="Cancel" Label="Exit" VerticalAlignment="Stretch" Margin="0,0,0,-0.143" Click="ExitAppAtOrder"/>
                 </StackPanel>
-                <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal"/>
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
+                    <AppBarButton x:Name="DeleteOrderAppButton" HorizontalAlignment="Stretch" Icon="Delete" Label="Slet bestilling" VerticalAlignment="Stretch"/>
+                    <AppBarButton x:Name="SendOrderAppButton" HorizontalAlignment="Stretch" Icon="Add" Label="Send bestilling" VerticalAlignment="Stretch"/>
+                </StackPanel>
             </Grid>
         </AppBar>
     </Page.BottomAppBar>
@@ -108,6 +111,8 @@
                   to show details for the current item
         -->
         <Grid Grid.Row="1" x:Name="contentRegion">
+            <ListView HorizontalAlignment="Left" Height="376" Margin="490,34,0,0" VerticalAlignment="Top" Width="818"/>
+
             <Image HorizontalAlignment="Left" Height="631.429" VerticalAlignment="Top" Width="1371" Stretch="Fill" Source="ms-appx:///Assets/HomePicture2.png">
                 <Image.Projection>
                     <PlaneProjection CenterOfRotationX="0" RotationX="180"/>
@@ -115,12 +120,6 @@
             </Image>
             <Rectangle Fill="Black" HorizontalAlignment="Left" Height="600" Stroke="Black" VerticalAlignment="Top" Width="1371" Opacity="0.5"/>
             <DatePicker Date="{Binding MDateTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="136,168,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="NavnSource" HorizontalAlignment="Left" Margin="1119,113,0,0" TextWrapping="Wrap" Text="auto" VerticalAlignment="Top"/>
-            <TextBox x:Name="TelefonSource" HorizontalAlignment="Left" Margin="1119,168,0,0" TextWrapping="Wrap" Text="auto" VerticalAlignment="Top"/>
-            <TextBox x:Name="EmailSource" HorizontalAlignment="Left" Margin="1119,224,0,0" TextWrapping="Wrap" Text="auto" VerticalAlignment="Top"/>
-            <TextBlock x:Name="Navn" HorizontalAlignment="Left" Margin="971,132,0,0" TextWrapping="Wrap" Text="Navn:" VerticalAlignment="Top"/>
-            <TextBlock x:Name="Telefon" HorizontalAlignment="Left" Margin="971,187,0,0" TextWrapping="Wrap" Text="Telefon" VerticalAlignment="Top"/>
-            <TextBlock x:Name="Email" HorizontalAlignment="Left" Margin="971,243,0,0" TextWrapping="Wrap" Text="E-mail:" VerticalAlignment="Top"/>
             <TextBlock x:Name="Price" HorizontalAlignment="Left" Margin="36,302,0,0" TextWrapping="Wrap" Text="Pris i kr:" VerticalAlignment="Top"/>
             <TextBlock x:Name="PriceSource" HorizontalAlignment="Left" Margin="140,305,0,0" TextWrapping="Wrap" Text="{Binding MPrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
             <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="136,117,0,0" SelectedIndex="{Binding MType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">

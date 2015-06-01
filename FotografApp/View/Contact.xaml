@@ -79,7 +79,9 @@
                 <StackPanel Orientation="Horizontal">
                     <AppBarButton x:Name="ExitAppButton" HorizontalAlignment="Stretch" Icon="Cancel" Label="Exit" VerticalAlignment="Stretch" Margin="0,0,0,-0.143" Click="ExitAppAtContact"/>
                 </StackPanel>
-                <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal"/>
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
+                    <AppBarButton x:Name="SendEmailAppButton" HorizontalAlignment="Stretch" Icon="Mail" Label="Send E-mail" VerticalAlignment="Stretch"/>
+                </StackPanel>
             </Grid>
         </AppBar>
     </Page.BottomAppBar>
