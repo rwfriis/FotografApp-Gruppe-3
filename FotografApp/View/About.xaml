@@ -142,7 +142,6 @@
                 <Button x:Name="KontaktButton" Content="KONTAKT" HorizontalAlignment="Left" Margin="756,-2,0,-4" VerticalAlignment="Top" Height="146" Width="150" BorderThickness="0,0,2,0" Click="KontaktAtAbout"/>
                 <Button x:Name="GalleryButton" Content="GALLERI" HorizontalAlignment="Left" Margin="468,-2,0,-4" VerticalAlignment="Top" Height="146" Width="150" BorderThickness="0,0,1,0" Flyout="{StaticResource GalleryFlyoutBase}"/>
                 <Button x:Name="BestilButton" Content="BESTIL" HorizontalAlignment="Left" Margin="900,-2,0,-4" VerticalAlignment="Top" Height="146" Width="150" Background="{x:Null}" BorderThickness="0,0,2,0" Click="BestilAtAbout"/>
-                <TextBlock x:Name="MainLoginInfo" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Login info*" VerticalAlignment="Top" Height="18" Width="163" Margin="1100,67,0,0" Foreground="#FF640000"/>
                 <TextBlock x:Name="MainName" HorizontalAlignment="Left" Margin="162,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="84" FontSize="36" FontWeight="Bold" TextAlignment="Center" Foreground="#FF979797">
 					<Run Text="Rolf"/>
 					<Run Text=" "/>

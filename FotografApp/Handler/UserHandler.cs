@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Background;
 using FotografApp.Model;
+using FotografApp.Persistency;
 using FotografApp.View;
 using FotografApp.ViewModel;
 
 namespace FotografApp.Handler
 {
-    class UserHandler
+    public class UserHandler
     {
         private MainViewModel ViewModel { get; set; }
 
@@ -27,6 +28,11 @@ namespace FotografApp.Handler
                 ViewModel.ResetText();
             }
             else ViewModel.RegisterStatusText = "Der opstod en fejl";
+        }
+
+        public bool DeleteUser(int id)
+        {
+            return DatabasePersistencyHandler.Instance.RemoveUser(id);
         }
 
         public void LogoutUser()

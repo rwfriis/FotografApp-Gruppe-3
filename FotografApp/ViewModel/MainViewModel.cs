@@ -19,7 +19,7 @@ using FotografApp.View;
 
 namespace FotografApp.ViewModel
 {
-    class MainViewModel : INotifyPropertyChanged
+    public class MainViewModel : INotifyPropertyChanged
     {
         private ICommand _createUserCommand;
         private ICommand _loginCommand;

@@ -9,7 +9,7 @@ using FotografApp.ViewModel;
 
 namespace FotografApp.Model
 {
-    class Register
+    public class Register
     {
         public static Boolean ValidateUserRegistration(string name, string password, string confirmPassword, string email, string tlf)
         {
@@ -29,7 +29,7 @@ namespace FotografApp.Model
                     {
                         if (password.Equals(confirmPassword) && password.Length < 51 && password.Length >= 5)
                         {
-                            if (name.Length > 5 && name.Length < 51)
+                            if (name.Length >= 5 && name.Length < 51)
                             {
                                 if (tlf.Length.Equals(8))
                                 {
@@ -47,10 +47,6 @@ namespace FotografApp.Model
                                 {
                                     //Popup with text: Only enter your phone number, no country code
                                 }
-                            }
-                            else if (name.Length > 50)
-                            {
-                                //Popup with text: Name is too long, only first and last name
                             }
                             else
                             {

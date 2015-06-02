@@ -51,11 +51,6 @@ namespace FotografApp.View
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
-
-            if (Singleton.Instance.CurrentUser != null)
-            {
-                MainLoginInfo.Text = "logged in";
-            }
         }
 
         /// <summary>

@@ -10,7 +10,7 @@ using FotografApp.ViewModel;
 
 namespace FotografApp.Handler
 {
-    class OrderHandler
+    public class OrderHandler
     {
         private MainViewModel ViewModel { get; set; }
 
@@ -36,12 +36,19 @@ namespace FotografApp.Handler
 
         public void DeleteOrder()
         {
-            if (DatabasePersistencyHandler.Instance.RemoveOrder(ViewModel.SelectedOrder))
+            try
             {
-                ViewModel.DeleteStatusText = "Bestilling slettet";
-                ViewModel.GetOrdersFromUser();
+                if (DatabasePersistencyHandler.Instance.RemoveOrder(ViewModel.SelectedOrder.Id))
+                {
+                    ViewModel.DeleteStatusText = "Bestilling slettet";
+                    ViewModel.GetOrdersFromUser();
+                }
+                else ViewModel.DeleteStatusText = "Der skete en fejl";
             }
-            else ViewModel.DeleteStatusText = "Der skete en fejl";
+            catch (Exception ex)
+            {
+                ViewModel.DeleteStatusText = "Vælg hvilken bestilling der skal fjernes";
+            }
         }
 
         public void UpdateOrder()

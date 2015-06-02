@@ -14,7 +14,7 @@ using Newtonsoft.Json;
 
 namespace FotografApp.Persistency
 {
-    class DatabasePersistencyHandler
+    public class DatabasePersistencyHandler
     {
         #region Singelton
         private readonly static DatabasePersistencyHandler instance = new DatabasePersistencyHandler();
@@ -173,24 +173,28 @@ namespace FotografApp.Persistency
         #endregion
 
         #region RemoveData
-        public void RemoveUser(User user)
+        public bool RemoveUser(int id)
         {
             try
             {
-                var respone = _client.DeleteAsync("Users/" + user.Email).Result;
-                Message = _message + " " + respone.IsSuccessStatusCode;
+                var response = _client.DeleteAsync("Users/" + id).Result;
+                Message = _message + " " + response.IsSuccessStatusCode;
+                if (response.IsSuccessStatusCode)
+                { return true; }
             }
             catch (Exception ex)
             {
                 Message = ex.Message;
+                return false;
             }
+            return false;
         }
 
-        public Boolean RemoveOrder(Orders order)
+        public Boolean RemoveOrder(int id)
         {
             try
             {
-                var response = _client.DeleteAsync("Orders/" + order.Id).Result;
+                var response = _client.DeleteAsync("Orders/" + id).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     return true;

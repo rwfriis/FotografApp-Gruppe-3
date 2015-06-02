@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace FotografApp.Model
 {
-    class Orders
+    public class Orders
     {
         public int UserId { get; set; }
         public DateTime Date { get; set; }

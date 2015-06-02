@@ -9,9 +9,9 @@ using FotografApp.ViewModel;
 
 namespace FotografApp.Model
 {
-    class Login
+    public class Login
     {
-        public static Boolean LoginAsUser(string email, string password)
+        public static bool LoginAsUser(string email, string password)
         {
             User user = DatabasePersistencyHandler.Instance.GetUser(email, password);
             if (user == null) return false;
