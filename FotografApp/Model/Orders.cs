@@ -21,13 +21,12 @@ namespace FotografApp.Model
 
         public Orders(int userId, DateTime dateTime, int portraits, int price, int typeOfId, string address)
         {
-            UserId = 1;
-            Date = new DateTime(1,1,1);
-            Portraits = 0;
-            Price = 0;
-            TypeOfId = 1;
-            Address = "test";
-            Id = 10;
+            UserId = userId;
+            Date = dateTime;
+            Portraits = portraits;
+            Price = price;
+            TypeOfId = typeOfId;
+            Address = address;
         }
 
         [JsonConstructor]

@@ -21,7 +21,6 @@ namespace Webservice
         [Required]
         public string Address { get; set; }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
     }
 }

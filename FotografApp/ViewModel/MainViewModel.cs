@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +14,8 @@ using FotografApp.Annotations;
 using FotografApp.Common;
 using FotografApp.Handler;
 using FotografApp.Model;
+using FotografApp.Persistency;
+using FotografApp.View;
 
 namespace FotografApp.ViewModel
 {
@@ -21,43 +25,128 @@ namespace FotografApp.ViewModel
         private ICommand _loginCommand;
         private ICommand _logoutCommand;
         private ICommand _createOrderCommand;
+        private ICommand _deleteOrderCommand;
         
         private string _login = "Visible";
         private string _logout = "Collapsed";
-        private string _typeVisibility = "Visible";
-        private static int _mType;
-        private static DateTimeOffset _mDateTime = DateTime.Now;
-        private static DateTimeOffset _mTime = DateTime.Now;
+        private string _typeVisibility = "Collapsed";
+        private int _mType;
+        private DateTimeOffset _mDateTime = DateTime.Now;
+        private DateTimeOffset _mTime = DateTime.Now;
         private string _catErrorText;
         private string _dateErrorText;
         private string _timeErrorText;
         private string _addErrorText;
+        private string _orderStatusText;
+        private string _loginStatusText;
+        private string _deleteStatusText;
+        private string _password;
+        private string _email;
+        private string _registerStatusText;
+        private string _rName;
+        private string _rEmail;
+        private string _rPassword;
+        private string _rcPassword;
+        private string _rTlf;
+        private string _mAddress;
+        private string _mAntal;
+        private int _mPrice;
+        private string _mName;
+        private ObservableCollection<Orders> _ordersCollection;
+        
 
         public OrderHandler OrderHandler { get; set; }
         public UserHandler UserHandler { get; set; }
-        public static string Email { get; set; }
-        public static string Password { get; set; }
-        public static string RName { get; set; }
-        public static string REmail { get; set; }
-        public static string RPassword { get; set; }
-        public static string RCPassword { get; set; }
-        public static string RTlf { get; set; }
-        public static string MAddress { get; set; }
 
-        public static DateTimeOffset MDateTime
+        #region PropertyChanged attributes
+
+        public string DeleteStatusText
         {
-            get { return _mDateTime; }
-            set { _mDateTime = value; }
+            get { return _deleteStatusText; }
+            set { _deleteStatusText = value; OnPropertyChanged(); }
         }
 
-        public static string MAntal { get; set; }
-
-        public static DateTimeOffset MTime
+        public string RName
         {
-            get { return _mTime; }
-            set { _mTime = value; }
+            get { return _rName; }
+            set { _rName = value; OnPropertyChanged(); }
         }
 
+        public string REmail
+        {
+            get { return _rEmail; }
+            set { _rEmail = value; OnPropertyChanged(); }
+        }
+
+        public string RPassword
+        {
+            get { return _rPassword; }
+            set { _rPassword = value; OnPropertyChanged(); }
+        }
+
+        public string RcPassword
+        {
+            get { return _rcPassword; }
+            set { _rcPassword = value; OnPropertyChanged(); }
+        }
+
+        public string RTlf
+        {
+            get { return _rTlf; }
+            set { _rTlf = value; OnPropertyChanged(); }
+        }
+
+        public string MAddress
+        {
+            get { return _mAddress; }
+            set { _mAddress = value; OnPropertyChanged(); }
+        }
+
+        public string MAntal
+        {
+            get { return _mAntal; }
+            set { _mAntal = value; OnPropertyChanged(); }
+        }
+
+        public int MPrice
+        {
+            get { return _mPrice; }
+            set { _mPrice = value; OnPropertyChanged(); }
+        }
+
+        public string MName
+        {
+            get { return _mName; }
+            set { _mName = value; OnPropertyChanged(); }
+        }
+
+        public string RegisterStatusText
+        {
+            get { return _registerStatusText; }
+            set { _registerStatusText = value; OnPropertyChanged(); }
+        }
+
+        public string Email
+        {
+            get { return _email; }
+            set { _email = value; OnPropertyChanged(); }
+        }
+        public string Password
+        {
+            get { return _password; }
+            set { _password = value; OnPropertyChanged(); }
+        }
+        public string LoginStatusText
+        {
+            get { return _loginStatusText; }
+            set { _loginStatusText = value; OnPropertyChanged(); }
+        }
+
+        public string OrderStatusText
+        {
+            get { return _orderStatusText; }
+            set { _orderStatusText = value; OnPropertyChanged();}
+        }
         public string CatErrorText
         {
             get { return _catErrorText; }
@@ -85,19 +174,35 @@ namespace FotografApp.ViewModel
         public string TypeVisibility
         {
             get { return _typeVisibility; }
-            set { _typeVisibility = value; OnPropertyChanged();}
+            set { _typeVisibility = value; OnPropertyChanged(); }
+        }
+        #endregion
+
+        public Orders SelectedOrder { get; set; }
+
+        public DateTimeOffset MDateTime
+        {
+            get { return _mDateTime; }
+            set { _mDateTime = value; }
         }
 
+        public DateTimeOffset MTime
+        {
+            get { return _mTime; }
+            set { _mTime = value; }
+        }
 
-        public static int MType
+        public int MType
         {
             get { return _mType; }
             set { _mType = value; OrderTypeChange();}
         }
 
-        public static int MPortraits { get; set; }
-        public static int MPrice { get; set; }
-        public static string MName { get; set; }
+        public ObservableCollection<Orders> OrdersCollection
+        {
+            get { return _ordersCollection; }
+            set { _ordersCollection = value; OnPropertyChanged(); }
+        }
 
         public MainViewModel()
         {
@@ -109,6 +214,7 @@ namespace FotografApp.ViewModel
                 VisibleLogout = "Visible";
                 VisibleLogin = "Collapsed";
             }
+            GetOrdersFromUser();
         }
 
         public string VisibleLogin
@@ -129,6 +235,7 @@ namespace FotografApp.ViewModel
             DateErrorText = "";
             TimeErrorText = "";
             AddErrorText = "";
+            OrderStatusText = "";
             var check = true;
             if (MType == 4)
             {
@@ -154,12 +261,94 @@ namespace FotografApp.ViewModel
                 check = false;
                 AddErrorText = "Skriv din addresse";
             }
-            return true;
+            return check;
         }
 
-        public static void OrderTypeChange()
+        public Boolean ValidateLogin()
+        {
+            LoginStatusText = "";
+            var check = true;
+            if (string.IsNullOrEmpty(Email))
+            {
+                check = false;
+            }
+            else if (string.IsNullOrEmpty(Password))
+            {
+                check = false;
+            }
+            if (!check)
+            {
+                LoginStatusText = "Udfyld begge felter";
+            }
+            return check;
+        }
+
+        public Boolean ValidateRegister()
+        {
+            RegisterStatusText = "";
+            var check = true;
+            if (string.IsNullOrEmpty(REmail) || string.IsNullOrEmpty(RPassword) || string.IsNullOrEmpty(RcPassword) || string.IsNullOrEmpty(RName) || string.IsNullOrEmpty(RTlf))
+            {
+                check = false;
+                RegisterStatusText = "Udfyld all felter";
+            }
+            else if (RPassword != RcPassword)
+            {
+                check = false;
+                RegisterStatusText = "Password skal være ens";
+            }
+            return check;
+        }
+
+        public void OrderTypeChange()
         {
             Singleton.Instance.MainViewModel.TypeVisibility = MType == 4 ? "Visible" : "Collapsed";
+        }
+
+        public void GetOrdersFromUser()
+        {
+            OrdersCollection = DatabasePersistencyHandler.Instance.GetOrdersFromUser(Singleton.Instance.CurrentUser);
+        }
+
+        public void SetLoginButton()
+        {
+            if (Singleton.Instance.CurrentUser != null)
+            {
+                VisibleLogin = "Collapsed";
+                VisibleLogout = "Visible";
+                GetOrdersFromUser();
+            }
+            else
+            {
+                VisibleLogout = "Collapsed";
+                VisibleLogin = "Visible";
+            }
+            LoginStatusText = "";
+        }
+
+        public void ResetText()
+        {
+            Email = "";
+            Password = "";
+            REmail = "";
+            RPassword = "";
+            RcPassword = "";
+            RTlf = "";
+            RName = "";
+            MAddress = "";
+            MAntal = "";
+            MDateTime = DateTime.Now;
+            MName = "";
+            MTime = DateTime.Now;
+            MType = 0;
+        }
+
+        #region ICommands
+
+        public ICommand DeleteOrderCommand
+        {
+            get { return _deleteOrderCommand ?? (_deleteOrderCommand = new RelayCommand(OrderHandler.DeleteOrder)); }
+            set { _deleteOrderCommand = value; }
         }
 
         public ICommand CreateUserCommand
@@ -185,23 +374,9 @@ namespace FotografApp.ViewModel
             get { return _logoutCommand ?? (_logoutCommand = new RelayCommand(UserHandler.LogoutUser)); }
             set { _logoutCommand = value; }
         }
+        #endregion
 
-        public void SetLoginButton()
-        {
-            if (Singleton.Instance.CurrentUser != null)
-            {
-                VisibleLogin = "Collapsed";
-                VisibleLogout = "Visible";
-            }
-            else
-            {
-                VisibleLogout = "Collapsed";
-                VisibleLogin = "Visible";
-            }
-            Email = "";
-            Password = "";
-        }
-
+        #region PropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
@@ -210,5 +385,6 @@ namespace FotografApp.ViewModel
             PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
         }
+        #endregion
     }
 }

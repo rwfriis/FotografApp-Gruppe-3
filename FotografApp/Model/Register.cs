@@ -11,7 +11,7 @@ namespace FotografApp.Model
 {
     class Register
     {
-        public static void ValidateUserRegistration(string name, string password, string confirmPassword, string email, string tlf)
+        public static Boolean ValidateUserRegistration(string name, string password, string confirmPassword, string email, string tlf)
         {
             List<User> user = DatabasePersistencyHandler.Instance.GetUsers();
             bool exist = false;
@@ -36,7 +36,7 @@ namespace FotografApp.Model
                                     if (email.Length < 51)
                                     {
                                         var userToBeAdded = new User(name, password, email, tlf);
-                                        DatabasePersistencyHandler.Instance.AddUser(userToBeAdded);
+                                        return DatabasePersistencyHandler.Instance.AddUser(userToBeAdded);
                                     }
                                     else
                                     {
@@ -71,13 +71,14 @@ namespace FotografApp.Model
             {
                 //Please fill all information boxes.
             }
+            return false;
         }
 
 
-        public static void ValidateOrderRegistration(User user, string address, DateTime dateTime, int type, int portraits, int price)
+        public static Boolean ValidateOrderRegistration(User user, string address, DateTime dateTime, int type, int portraits, int price)
         {
             var orderToBeAdded = new Orders(user.Id, dateTime, portraits, price, type, address);
-            DatabasePersistencyHandler.Instance.AddOrder(orderToBeAdded);
+            return DatabasePersistencyHandler.Instance.AddOrder(orderToBeAdded);
         }
     }
 }

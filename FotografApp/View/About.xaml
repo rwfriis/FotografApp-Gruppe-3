@@ -18,22 +18,22 @@
             <MenuFlyoutItem x:Name="KreativtFlyOut" Text="Kreativt" Click="KreativtAtAbout"/>
         </MenuFlyout>
         <Flyout x:Key="RegisterAppFlyOut">
-            <Grid Height="289" Width="100">
+            <Grid Width="100">
                 <StackPanel HorizontalAlignment="Left" Height="233" VerticalAlignment="Top" Width="140" Margin="-20,-17,-20,0">
-                    <TextBlock x:Name="Navn" TextWrapping="Wrap" Text="Navn:" FontSize="12"/>
-                    <TextBox x:Name="NavnSource" Text="{Binding RName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" FontSize="12" Height="18"/>
+                    <TextBlock x:Name="Navn2" TextWrapping="Wrap" Text="Navn:" FontSize="12"/>
+                    <TextBox x:Name="NavnSource2" Text="{Binding RName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" FontSize="12" Height="18"/>
                     <TextBlock x:Name="Password" TextWrapping="Wrap" Text="Password:" FontSize="12"/>
                     <PasswordBox x:Name="PasswordSource" Password="{Binding RPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="12"/>
                     <TextBlock x:Name="Confirm_Password" TextWrapping="Wrap" Text="Confirm Password:" FontSize="12"/>
-                    <PasswordBox x:Name="CPasswordSource" Password="{Binding RCPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="12"/>
+                    <PasswordBox x:Name="CPasswordSource" Password="{Binding RcPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="12"/>
                     <TextBlock x:Name="E_mail" TextWrapping="Wrap" Text="E-mail:" FontSize="12"/>
                     <TextBox x:Name="E_mailSource" Text="{Binding REmail, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" FontSize="12"/>
-                    <TextBlock x:Name="Telefon" TextWrapping="Wrap" Text="Telefon:" FontSize="12"/>
-                    <TextBox x:Name="TelefonSource" Text="{Binding RTlf, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" FontSize="12"/>
+                    <TextBlock x:Name="Telefon2" TextWrapping="Wrap" Text="Telefon:" FontSize="12"/>
+                    <TextBox x:Name="TelefonSource2" Text="{Binding RTlf, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" FontSize="12"/>
                 </StackPanel>
-                <StackPanel HorizontalAlignment="Left" Height="90" VerticalAlignment="Top" Width="140" Margin="-20,216,-20,-20">
-                    <TextBlock x:Name="RegisterStatus" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" FontSize="12" Text="Du har ikke registreret" Foreground="Red" TextAlignment="Center"/>
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Margin="-20,216,-20,-20">
                     <AppBarButton x:Name="RegisterAppButton2" HorizontalAlignment="Stretch" Icon="Add" Label="Register" VerticalAlignment="Stretch" Command="{Binding CreateUserCommand}"/>
+                    <TextBlock x:Name="RegisterStatus" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" FontSize="12" Text="{Binding RegisterStatusText}" Foreground="Red" TextAlignment="Center"/>
                 </StackPanel>
             </Grid>
         </Flyout>
@@ -43,11 +43,11 @@
                     <TextBlock x:Name="LEmail" TextWrapping="Wrap" Text="Email" FontSize="12"/>
                     <TextBox x:Name="LEmailSource" TextWrapping="Wrap" PlaceholderText="Email" Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <TextBlock x:Name="LPassword" TextWrapping="Wrap" Text="Password" FontSize="12"/>
-                    <TextBox x:Name="LPasswordSource" TextWrapping="Wrap" PlaceholderText="Password" Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <PasswordBox x:Name="LPasswordSource" PlaceholderText="Password" Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Left" Height="90" VerticalAlignment="Top" Width="140" Margin="-20,76,-20,-16">
-                    <TextBlock x:Name="LoginStatus" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" FontSize="12" Text="Du er ikke logget ind" Foreground="Red" TextAlignment="Center"/>
                     <AppBarButton x:Name="LoginAppButton2" HorizontalAlignment="Stretch" Icon="Accept" Label="Login" VerticalAlignment="Stretch" FontSize="12" Command="{Binding LoginCommand}"/>
+                    <TextBlock x:Name="LoginStatus" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" FontSize="12" Text="{Binding LoginStatusText}" Foreground="Red" TextAlignment="Center"/>
                 </StackPanel>
             </Grid>
         </Flyout>
@@ -78,7 +78,6 @@
                 <StackPanel Orientation="Horizontal">
                     <AppBarButton x:Name="ExitAppButton" HorizontalAlignment="Stretch" Icon="Cancel" Label="Exit" VerticalAlignment="Stretch" Margin="0,0,0,-0.143" Click="ExitAppAtAbout"/>
                 </StackPanel>
-                <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal"/>
             </Grid>
         </AppBar>
     </Page.BottomAppBar>

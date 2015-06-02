@@ -23,14 +23,25 @@ namespace FotografApp.Handler
         {
             if (ViewModel.ValidateOrder())
             {
-                var date = new DateTime(MainViewModel.MDateTime.Year, MainViewModel.MDateTime.Month, MainViewModel.MDateTime.Day, MainViewModel.MTime.Hour, MainViewModel.MTime.Minute, MainViewModel.MTime.Second);
-                Register.ValidateOrderRegistration(Singleton.Instance.CurrentUser, MainViewModel.MAddress, DateTime.Now, MainViewModel.MType, Convert.ToInt32(MainViewModel.MAntal), 0);
+                var date = new DateTime(ViewModel.MDateTime.Year, ViewModel.MDateTime.Month, ViewModel.MDateTime.Day, ViewModel.MTime.Hour, ViewModel.MTime.Minute, ViewModel.MTime.Second);
+                if (Register.ValidateOrderRegistration(Singleton.Instance.CurrentUser, ViewModel.MAddress, date, ViewModel.MType + 1, Convert.ToInt32(ViewModel.MAntal), 0))
+                {
+                    ViewModel.OrderStatusText = "Bestilling udført";
+                    ViewModel.ResetText();
+                    ViewModel.GetOrdersFromUser();
+                }
+                else ViewModel.OrderStatusText = "Der opstod en fejl";
             }
         }
 
         public void DeleteOrder()
         {
-            DatabasePersistencyHandler.Instance.RemoveOrder(null);
+            if (DatabasePersistencyHandler.Instance.RemoveOrder(ViewModel.SelectedOrder))
+            {
+                ViewModel.DeleteStatusText = "Bestilling slettet";
+                ViewModel.GetOrdersFromUser();
+            }
+            else ViewModel.DeleteStatusText = "Der skete en fejl";
         }
 
         public void UpdateOrder()

@@ -11,24 +11,12 @@ namespace FotografApp.Model
 {
     class Login
     {
-        private static bool _isLoggedIn = false;
-
-        public static bool IsLoggedIn
-        {
-            get { return _isLoggedIn; }
-            set { _isLoggedIn = value; }
-        }
-
-        public static bool UserDoesNotExist { get; set; }
-        public static bool PasswordIsWrong { get; set; }
-
-        public static void LoginAsUser(string email, string password)
+        public static Boolean LoginAsUser(string email, string password)
         {
             User user = DatabasePersistencyHandler.Instance.GetUser(email, password);
-            if (user != null)
-            {
-                Singleton.Instance.CurrentUser = user;
-            }
+            if (user == null) return false;
+            Singleton.Instance.CurrentUser = user;
+            return true;
         }
     }
 }

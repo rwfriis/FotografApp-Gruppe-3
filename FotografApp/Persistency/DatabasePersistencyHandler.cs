@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -8,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Core;
 using FotografApp.Model;
+using FotografApp.ViewModel;
 using Newtonsoft.Json;
 
 namespace FotografApp.Persistency
@@ -99,10 +101,41 @@ namespace FotografApp.Persistency
             }
             return orders;
         }
+
+        public ObservableCollection<Orders> GetOrdersFromUser(User user)
+        {
+            var orders = new ObservableCollection<Orders>();
+            if (user != null)
+            {
+                var temp = new ObservableCollection<Orders>();
+                try
+                {
+                    var response = _client.GetAsync("Orders").Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string json = response.Content.ReadAsStringAsync().Result;
+                        temp = JsonConvert.DeserializeObject<ObservableCollection<Orders>>(json);
+                        foreach (var order in temp)
+                        {
+                            if (order.UserId == user.Id)
+                            {
+                                orders.Add(order);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Message = ex.Message;
+                }
+            }
+            return orders;
+        }
+
         #endregion
 
         #region AddData
-        public void AddUser(User user)
+        public Boolean AddUser(User user)
         {
             try
             {
@@ -111,14 +144,16 @@ namespace FotografApp.Persistency
                 content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/json");
                 var response = _client.PostAsync("Users", content).Result;
                 Message = response.Content.ReadAsStringAsync().Result;
+                return response.IsSuccessStatusCode;
             }
             catch (Exception ex)
             {
                 Message = ex.Message;
+                return false;
             }
         }
 
-        public void AddOrder(Orders order)
+        public Boolean AddOrder(Orders order)
         {
             try
             {
@@ -127,10 +162,12 @@ namespace FotografApp.Persistency
                 content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/json");
                 var response = _client.PostAsync("Orders", content).Result;
                 Message = response.Content.ReadAsStringAsync().Result;
+                return response.IsSuccessStatusCode;
             }
             catch (Exception ex)
             {
                 Message = ex.Message;
+                return false;
             }
         }
         #endregion
@@ -149,17 +186,21 @@ namespace FotografApp.Persistency
             }
         }
 
-        public void RemoveOrder(Orders order)
+        public Boolean RemoveOrder(Orders order)
         {
             try
             {
-                var response = _client.DeleteAsync("Orders/" + order).Result;
-                Message = _message + " " + response.IsSuccessStatusCode;
+                var response = _client.DeleteAsync("Orders/" + order.Id).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
             }
             catch (Exception ex)
             {
                 Message = ex.Message;
             }
+            return false;
         }
         #endregion
 

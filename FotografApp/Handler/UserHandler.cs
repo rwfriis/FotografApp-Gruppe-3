@@ -12,27 +12,43 @@ namespace FotografApp.Handler
 {
     class UserHandler
     {
-        private MainViewModel _viewModel { get; set; }
+        private MainViewModel ViewModel { get; set; }
 
         public UserHandler(MainViewModel viewModel)
         {
-            _viewModel = viewModel;
+            ViewModel = viewModel;
         }
         public void CreateUser()
         {
-            Register.ValidateUserRegistration(MainViewModel.RName, MainViewModel.RPassword, MainViewModel.RCPassword, MainViewModel.REmail, MainViewModel.RTlf);
+            if (!ViewModel.ValidateRegister()) return;
+            if (Register.ValidateUserRegistration(ViewModel.RName, ViewModel.RPassword, ViewModel.RcPassword, ViewModel.REmail, ViewModel.RTlf))
+            {
+                ViewModel.RegisterStatusText = "Du er registreret";
+                ViewModel.ResetText();
+            }
+            else ViewModel.RegisterStatusText = "Der opstod en fejl";
         }
 
         public void LogoutUser()
         {
             Singleton.Instance.CurrentUser = null;
-            _viewModel.SetLoginButton();
+            ViewModel.SetLoginButton();
         }
 
         public void LoginUser()
         {
-            Login.LoginAsUser(MainViewModel.Email, MainViewModel.Password);
-            _viewModel.SetLoginButton();
+            if (!ViewModel.ValidateLogin()) return;
+            if (Login.LoginAsUser(ViewModel.Email, ViewModel.Password))
+            {
+                ViewModel.SetLoginButton();
+                ViewModel.ResetText();
+                ViewModel.LoginStatusText = "Logget ind";
+            }
+            else
+            {
+                ViewModel.LoginStatusText = "Forkert email eller password";
+            }
+            
         }
     }
 }
