@@ -36,16 +36,16 @@
             </Grid>
         </Flyout>
         <Flyout x:Key="LoginAppFlyOut">
-            <Grid Height="150" Width="100">
+            <Grid Height="180" Width="100">
                 <StackPanel HorizontalAlignment="Left" Height="93" VerticalAlignment="Top" Width="140" Margin="-20,-17,-20,0">
                     <TextBlock x:Name="LEmail" TextWrapping="Wrap" Text="Email" FontSize="12"/>
                     <TextBox x:Name="LEmailSource" TextWrapping="Wrap" PlaceholderText="Email" Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <TextBlock x:Name="LPassword" TextWrapping="Wrap" Text="Password" FontSize="12"/>
                     <PasswordBox x:Name="LPasswordSource" PlaceholderText="Password" Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
-                <StackPanel HorizontalAlignment="Left" Height="90" VerticalAlignment="Top" Width="140" Margin="-20,76,-20,-16">
+                <StackPanel HorizontalAlignment="Left" Height="120" VerticalAlignment="Top" Width="140" Margin="-20,76,-20,-16">
                     <AppBarButton x:Name="LoginAppButton2" HorizontalAlignment="Stretch" Icon="Accept" Label="Login" VerticalAlignment="Stretch" FontSize="12" Command="{Binding LoginCommand}"/>
-                    <TextBlock x:Name="LoginStatus" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" FontSize="12" Text="{Binding LoginStatusText}" Foreground="Red" TextAlignment="Center"/>
+                    <TextBlock x:Name="LoginStatus" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="140" FontSize="12" Text="{Binding LoginStatusText}" Foreground="Red" TextAlignment="Center"/>
                 </StackPanel>
             </Grid>
         </Flyout>

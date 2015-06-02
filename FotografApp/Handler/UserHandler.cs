@@ -39,6 +39,8 @@ namespace FotografApp.Handler
         {
             Singleton.Instance.CurrentUser = null;
             ViewModel.SetLoginButton();
+            ViewModel.OrdersCollection.Clear();
+            ViewModel.ResetText();
         }
 
         public void LoginUser()

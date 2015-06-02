@@ -59,6 +59,17 @@ namespace FotografApp.ViewModel
         public UserHandler UserHandler { get; set; }
 
         #region PropertyChanged attributes
+        public DateTimeOffset MDateTime
+        {
+            get { return _mDateTime; }
+            set { _mDateTime = value; OnPropertyChanged(); }
+        }
+
+        public DateTimeOffset MTime
+        {
+            get { return _mTime; }
+            set { _mTime = value; OnPropertyChanged(); }
+        }
 
         public string DeleteStatusText
         {
@@ -180,18 +191,6 @@ namespace FotografApp.ViewModel
 
         public Orders SelectedOrder { get; set; }
 
-        public DateTimeOffset MDateTime
-        {
-            get { return _mDateTime; }
-            set { _mDateTime = value; }
-        }
-
-        public DateTimeOffset MTime
-        {
-            get { return _mTime; }
-            set { _mTime = value; }
-        }
-
         public int MType
         {
             get { return _mType; }
@@ -260,6 +259,10 @@ namespace FotografApp.ViewModel
             {
                 check = false;
                 AddErrorText = "Skriv din addresse";
+            }
+            if (!check)
+            {
+                OrderStatusText = "Udfyld alle felterne korrekt";
             }
             return check;
         }
@@ -341,6 +344,10 @@ namespace FotografApp.ViewModel
             MName = "";
             MTime = DateTime.Now;
             MType = 0;
+            CatErrorText = "";
+            AddErrorText = "";
+            DateErrorText = "";
+            TimeErrorText = "";
         }
 
         #region ICommands

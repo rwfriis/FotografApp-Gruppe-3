@@ -23,8 +23,13 @@ namespace FotografApp.Handler
         {
             if (ViewModel.ValidateOrder())
             {
-                var date = new DateTime(ViewModel.MDateTime.Year, ViewModel.MDateTime.Month, ViewModel.MDateTime.Day, ViewModel.MTime.Hour, ViewModel.MTime.Minute, ViewModel.MTime.Second);
-                if (Register.ValidateOrderRegistration(Singleton.Instance.CurrentUser, ViewModel.MAddress, date, ViewModel.MType + 1, Convert.ToInt32(ViewModel.MAntal), 0))
+                int a;
+                if (!int.TryParse(ViewModel.MAntal, out a))
+                {
+                    a = 0;
+                }
+                DateTime date = new DateTime(ViewModel.MDateTime.Year, ViewModel.MDateTime.Month, ViewModel.MDateTime.Day, ViewModel.MTime.Hour, ViewModel.MTime.Minute, 0);
+                if (Register.ValidateOrderRegistration(Singleton.Instance.CurrentUser, ViewModel.MAddress, date, ViewModel.MType, a, 0))
                 {
                     ViewModel.OrderStatusText = "Bestilling udført";
                     ViewModel.ResetText();
